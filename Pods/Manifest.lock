@@ -1,0 +1,36 @@
+PODS:
+  - AFNetworking (1.2.1)
+  - BotKit (0.1.8):
+    - BotKit/Categories
+  - BotKit/Categories (0.1.8)
+  - CrittercismSDK (3.5.1)
+  - GoogleAnalytics-iOS-SDK (2.0beta4)
+  - KIF (0.0.1)
+  - Kiwi (2.0.6)
+  - PonyDebugger (0.3.0):
+    - SocketRocket
+  - SocketRocket (0.2.0)
+  - SSKeychain (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.2.1)
+  - BotKit
+  - CrittercismSDK (~> 3.5.1)
+  - GoogleAnalytics-iOS-SDK (~> 2.0beta4)
+  - KIF (~> 0.0.1)
+  - Kiwi (~> 2.0.6)
+  - PonyDebugger
+  - SSKeychain
+
+SPEC CHECKSUMS:
+  AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
+  BotKit: 008144f879f79fc694bbc6b3efab1df9bc7d9bbd
+  CrittercismSDK: 1cd30b0bb1448494da29539a1cf490475288d1d1
+  GoogleAnalytics-iOS-SDK: ae8e58e771b6dec84c0047154cc0e550a15e6f54
+  KIF: 26ce47f3f37660ca9bb0b62f9545597e21eca3fc
+  Kiwi: 56082a80f942de4d10423d8d8a599ab30cf50228
+  PonyDebugger: 72c2277c30f247390116ae328fe24082e0ed558e
+  SocketRocket: bca43a94bd9aac3a629df42c06843402399ee67b
+  SSKeychain: 9b4a6249ae46b6d1f39a013621bd803f3baba1e3
+
+COCOAPODS: 0.20.2

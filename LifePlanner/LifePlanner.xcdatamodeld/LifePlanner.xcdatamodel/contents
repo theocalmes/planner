@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12C2034" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TCHabit" representedClassName="TCHabit" parentEntity="TCNode" syncable="YES">
+        <attribute name="completedCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="incompletedCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastCompleted" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="streakCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="TCHabitTask" representedClassName="TCTaskHabit" parentEntity="TCHabit" syncable="YES">
+        <relationship name="task" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TCTask" syncable="YES"/>
+    </entity>
+    <entity name="TCNode" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="detailedDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TCNode" inverseName="parent" inverseEntity="TCNode" syncable="YES"/>
+        <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TCNode" inverseName="children" inverseEntity="TCNode" syncable="YES"/>
+    </entity>
+    <entity name="TCTask" representedClassName="TCTask" parentEntity="TCNode" syncable="YES">
+        <attribute name="completionState" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="TCTaskValidation" parentEntity="TCTask" syncable="YES"/>
+    <elements>
+        <element name="TCTask" positionX="252" positionY="111" width="128" height="73"/>
+        <element name="TCHabit" positionX="-29" positionY="-10" width="128" height="103"/>
+        <element name="TCNode" positionX="189" positionY="270" width="128" height="133"/>
+        <element name="TCHabitTask" positionX="178" positionY="-117" width="128" height="58"/>
+        <element name="TCTaskValidation" positionX="540" positionY="-124" width="128" height="43"/>
+    </elements>
 </model>

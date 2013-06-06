@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06EAF0C3959D410D85B832FD /* libPods-LifePlannerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E75DF2EB23A4602ADBCD4D7 /* libPods-LifePlannerTests.a */; };
+		13F2290A1A554A2084D1FA1C /* libPods-LifePlannerUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7C7879AEEC45A39F8AA856 /* libPods-LifePlannerUnitTests.a */; };
+		B31AA1D5E89941F9B8D423ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B20F344AC46430E99E02AE3 /* libPods.a */; };
 		E4C6847117602AA300DD8763 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847017602AA300DD8763 /* UIKit.framework */; };
 		E4C6847317602AA300DD8763 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847217602AA300DD8763 /* Foundation.framework */; };
 		E4C6847517602AA300DD8763 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847417602AA300DD8763 /* CoreGraphics.framework */; };
@@ -24,6 +27,17 @@
 		E4C6849717602AA300DD8763 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847617602AA300DD8763 /* CoreData.framework */; };
 		E4C6849F17602AA300DD8763 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C6849D17602AA300DD8763 /* InfoPlist.strings */; };
 		E4C684A217602AA300DD8763 /* LifePlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C684A117602AA300DD8763 /* LifePlannerTests.m */; };
+		E4C684AD17602B1C00DD8763 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6847E17602AA300DD8763 /* main.m */; };
+		E4C684AE17602B1C00DD8763 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6848217602AA300DD8763 /* TCAppDelegate.m */; };
+		E4C684AF17602B1C00DD8763 /* LifePlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4C6848A17602AA300DD8763 /* LifePlanner.xcdatamodeld */; };
+		E4C684B117602B1C00DD8763 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847017602AA300DD8763 /* UIKit.framework */; };
+		E4C684B217602B1C00DD8763 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847217602AA300DD8763 /* Foundation.framework */; };
+		E4C684B317602B1C00DD8763 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847417602AA300DD8763 /* CoreGraphics.framework */; };
+		E4C684B417602B1C00DD8763 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847617602AA300DD8763 /* CoreData.framework */; };
+		E4C684B617602B1C00DD8763 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C6847B17602AA300DD8763 /* InfoPlist.strings */; };
+		E4C684B717602B1C00DD8763 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C6848417602AA300DD8763 /* Default.png */; };
+		E4C684B817602B1C00DD8763 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C6848617602AA300DD8763 /* Default@2x.png */; };
+		E4C684B917602B1C00DD8763 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C6848817602AA300DD8763 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A7C7879AEEC45A39F8AA856 /* libPods-LifePlannerUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LifePlannerUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E75DF2EB23A4602ADBCD4D7 /* libPods-LifePlannerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LifePlannerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B20F344AC46430E99E02AE3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E481DE331F4457C80D9F126 /* Pods-LifePlannerTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifePlannerTests.xcconfig"; path = "Pods/Pods-LifePlannerTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		3F95091C7C18432287DEF0C4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		53623815443046E98992E145 /* Pods-LifePlannerUnitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifePlannerUnitTests.xcconfig"; path = "Pods/Pods-LifePlannerUnitTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		E4C6846D17602AA300DD8763 /* LifePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C6847017602AA300DD8763 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4C6847217602AA300DD8763 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +78,8 @@
 		E4C6849E17602AA300DD8763 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4C684A017602AA300DD8763 /* LifePlannerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifePlannerTests.h; sourceTree = "<group>"; };
 		E4C684A117602AA300DD8763 /* LifePlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifePlannerTests.m; sourceTree = "<group>"; };
+		E4C684BD17602B1C00DD8763 /* LifePlanner copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LifePlanner copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C684BE17602B1C00DD8763 /* LifePlanner copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LifePlanner copy-Info.plist"; path = "/Users/theo/dev/LifePlanner/LifePlanner copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +91,7 @@
 				E4C6847317602AA300DD8763 /* Foundation.framework in Frameworks */,
 				E4C6847517602AA300DD8763 /* CoreGraphics.framework in Frameworks */,
 				E4C6847717602AA300DD8763 /* CoreData.framework in Frameworks */,
+				B31AA1D5E89941F9B8D423ED /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +103,19 @@
 				E4C6849517602AA300DD8763 /* UIKit.framework in Frameworks */,
 				E4C6849617602AA300DD8763 /* Foundation.framework in Frameworks */,
 				E4C6849717602AA300DD8763 /* CoreData.framework in Frameworks */,
+				06EAF0C3959D410D85B832FD /* libPods-LifePlannerTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C684B017602B1C00DD8763 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C684B117602B1C00DD8763 /* UIKit.framework in Frameworks */,
+				E4C684B217602B1C00DD8763 /* Foundation.framework in Frameworks */,
+				E4C684B317602B1C00DD8763 /* CoreGraphics.framework in Frameworks */,
+				E4C684B417602B1C00DD8763 /* CoreData.framework in Frameworks */,
+				13F2290A1A554A2084D1FA1C /* libPods-LifePlannerUnitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +129,10 @@
 				E4C6849A17602AA300DD8763 /* LifePlannerTests */,
 				E4C6846F17602AA300DD8763 /* Frameworks */,
 				E4C6846E17602AA300DD8763 /* Products */,
+				E4C684BE17602B1C00DD8763 /* LifePlanner copy-Info.plist */,
+				3F95091C7C18432287DEF0C4 /* Pods.xcconfig */,
+				3E481DE331F4457C80D9F126 /* Pods-LifePlannerTests.xcconfig */,
+				53623815443046E98992E145 /* Pods-LifePlannerUnitTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +141,7 @@
 			children = (
 				E4C6846D17602AA300DD8763 /* LifePlanner.app */,
 				E4C6849217602AA300DD8763 /* LifePlannerTests.octest */,
+				E4C684BD17602B1C00DD8763 /* LifePlanner copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +154,9 @@
 				E4C6847417602AA300DD8763 /* CoreGraphics.framework */,
 				E4C6847617602AA300DD8763 /* CoreData.framework */,
 				E4C6849317602AA300DD8763 /* SenTestingKit.framework */,
+				3B20F344AC46430E99E02AE3 /* libPods.a */,
+				1E75DF2EB23A4602ADBCD4D7 /* libPods-LifePlannerTests.a */,
+				1A7C7879AEEC45A39F8AA856 /* libPods-LifePlannerUnitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4C684A517602AA300DD8763 /* Build configuration list for PBXNativeTarget "LifePlanner" */;
 			buildPhases = (
+				A71D9CA416DE45638DE3A482 /* Check Pods Manifest.lock */,
 				E4C6846917602AA300DD8763 /* Sources */,
 				E4C6846A17602AA300DD8763 /* Frameworks */,
 				E4C6846B17602AA300DD8763 /* Resources */,
+				EDAB50A7762044A48D37D5C1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,10 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4C684A817602AA300DD8763 /* Build configuration list for PBXNativeTarget "LifePlannerTests" */;
 			buildPhases = (
+				B8D5344F948449BCA1B68688 /* Check Pods Manifest.lock */,
 				E4C6848D17602AA300DD8763 /* Sources */,
 				E4C6848E17602AA300DD8763 /* Frameworks */,
 				E4C6848F17602AA300DD8763 /* Resources */,
 				E4C6849017602AA300DD8763 /* ShellScript */,
+				A368A828AF674034A73B3AF9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +247,25 @@
 			productName = LifePlannerTests;
 			productReference = E4C6849217602AA300DD8763 /* LifePlannerTests.octest */;
 			productType = "com.apple.product-type.bundle";
+		};
+		E4C684AB17602B1C00DD8763 /* LifePlannerUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C684BA17602B1C00DD8763 /* Build configuration list for PBXNativeTarget "LifePlannerUnitTests" */;
+			buildPhases = (
+				80F9C35BE87E4D8BBF1F3A9E /* Check Pods Manifest.lock */,
+				E4C684AC17602B1C00DD8763 /* Sources */,
+				E4C684B017602B1C00DD8763 /* Frameworks */,
+				E4C684B517602B1C00DD8763 /* Resources */,
+				40523F19E0474F7AAEB4D14D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifePlannerUnitTests;
+			productName = LifePlanner;
+			productReference = E4C684BD17602B1C00DD8763 /* LifePlanner copy.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -224,6 +291,7 @@
 			targets = (
 				E4C6846C17602AA300DD8763 /* LifePlanner */,
 				E4C6849117602AA300DD8763 /* LifePlannerTests */,
+				E4C684AB17602B1C00DD8763 /* LifePlannerUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,9 +316,90 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4C684B517602B1C00DD8763 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C684B617602B1C00DD8763 /* InfoPlist.strings in Resources */,
+				E4C684B717602B1C00DD8763 /* Default.png in Resources */,
+				E4C684B817602B1C00DD8763 /* Default@2x.png in Resources */,
+				E4C684B917602B1C00DD8763 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		40523F19E0474F7AAEB4D14D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-LifePlannerUnitTests-resources.sh\"\n";
+		};
+		80F9C35BE87E4D8BBF1F3A9E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		A368A828AF674034A73B3AF9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-LifePlannerTests-resources.sh\"\n";
+		};
+		A71D9CA416DE45638DE3A482 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		B8D5344F948449BCA1B68688 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
 		E4C6849017602AA300DD8763 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,6 +412,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		EDAB50A7762044A48D37D5C1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -282,6 +445,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C684A217602AA300DD8763 /* LifePlannerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C684AC17602B1C00DD8763 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C684AD17602B1C00DD8763 /* main.m in Sources */,
+				E4C684AE17602B1C00DD8763 /* TCAppDelegate.m in Sources */,
+				E4C684AF17602B1C00DD8763 /* LifePlanner.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,28 +546,35 @@
 		};
 		E4C684A617602AA300DD8763 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F95091C7C18432287DEF0C4 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LifePlanner/LifePlanner-Prefix.pch";
 				INFOPLIST_FILE = "LifePlanner/LifePlanner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		E4C684A717602AA300DD8763 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F95091C7C18432287DEF0C4 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LifePlanner/LifePlanner-Prefix.pch";
 				INFOPLIST_FILE = "LifePlanner/LifePlanner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		E4C684A917602AA300DD8763 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E481DE331F4457C80D9F126 /* Pods-LifePlannerTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LifePlanner.app/LifePlanner";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -412,6 +592,7 @@
 		};
 		E4C684AA17602AA300DD8763 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E481DE331F4457C80D9F126 /* Pods-LifePlannerTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LifePlanner.app/LifePlanner";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -424,6 +605,30 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		E4C684BB17602B1C00DD8763 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53623815443046E98992E145 /* Pods-LifePlannerUnitTests.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifePlanner/LifePlanner-Prefix.pch";
+				INFOPLIST_FILE = "LifePlanner copy-Info.plist";
+				PRODUCT_NAME = "LifePlanner copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4C684BC17602B1C00DD8763 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53623815443046E98992E145 /* Pods-LifePlannerUnitTests.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifePlanner/LifePlanner-Prefix.pch";
+				INFOPLIST_FILE = "LifePlanner copy-Info.plist";
+				PRODUCT_NAME = "LifePlanner copy";
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -446,6 +651,7 @@
 				E4C684A717602AA300DD8763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E4C684A817602AA300DD8763 /* Build configuration list for PBXNativeTarget "LifePlannerTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +660,16 @@
 				E4C684AA17602AA300DD8763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4C684BA17602B1C00DD8763 /* Build configuration list for PBXNativeTarget "LifePlannerUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C684BB17602B1C00DD8763 /* Debug */,
+				E4C684BC17602B1C00DD8763 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

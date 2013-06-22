@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6649BE139A6444F09FEE5A89 /* libPods-PlannerIntegrationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F83601D464480C96BED4DF /* libPods-PlannerIntegrationTests.a */; };
+		E426F3BF177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
+		E426F3C0177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
+		E426F3C1177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
+		E426F3C41772154C001EA3BA /* TCCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3C31772154C001EA3BA /* TCCalendar.m */; };
+		E426F3C51772154C001EA3BA /* TCCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3C31772154C001EA3BA /* TCCalendar.m */; };
+		E426F3C71772171F001EA3BA /* TCCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3C61772171F001EA3BA /* TCCalendarTests.m */; };
 		E428061E176F7D9200B498E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E428061D176F7D9200B498E5 /* Foundation.framework */; };
 		E4280620176F7D9200B498E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E428061F176F7D9200B498E5 /* CoreGraphics.framework */; };
 		E4280622176F7D9200B498E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4280621176F7D9200B498E5 /* UIKit.framework */; };
@@ -14,7 +21,6 @@
 		E428062A176F7D9200B498E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4280628176F7D9200B498E5 /* InfoPlist.strings */; };
 		E428062C176F7D9200B498E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E428062B176F7D9200B498E5 /* main.m */; };
 		E4280630176F7D9200B498E5 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E428062F176F7D9200B498E5 /* TCAppDelegate.m */; };
-		E4280633176F7D9200B498E5 /* Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4280631176F7D9200B498E5 /* Planner.xcdatamodeld */; };
 		E4280635176F7D9200B498E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4280634176F7D9200B498E5 /* Images.xcassets */; };
 		E428063C176F7D9300B498E5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E428063B176F7D9300B498E5 /* XCTest.framework */; };
 		E428063D176F7D9300B498E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E428061D176F7D9200B498E5 /* Foundation.framework */; };
@@ -22,6 +28,34 @@
 		E428063F176F7D9300B498E5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4280623176F7D9200B498E5 /* CoreData.framework */; };
 		E4280647176F7D9300B498E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4280645176F7D9300B498E5 /* InfoPlist.strings */; };
 		E4280649176F7D9300B498E5 /* PlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4280648176F7D9300B498E5 /* PlannerTests.m */; };
+		E4280654176F7FE200B498E5 /* Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4280652176F7FE200B498E5 /* Planner.xcdatamodeld */; };
+		E44047FB176F808600E51384 /* NSDate+TCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E44047FA176F808600E51384 /* NSDate+TCAdditions.m */; };
+		E44047FD176F81A700E51384 /* TCSpecificDaysScheduleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E44047FC176F81A700E51384 /* TCSpecificDaysScheduleTests.m */; };
+		E48E517C176F7E440079B482 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E428062B176F7D9200B498E5 /* main.m */; };
+		E48E517D176F7E440079B482 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E428062F176F7D9200B498E5 /* TCAppDelegate.m */; };
+		E48E5180176F7E440079B482 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E428061F176F7D9200B498E5 /* CoreGraphics.framework */; };
+		E48E5181176F7E440079B482 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4280623176F7D9200B498E5 /* CoreData.framework */; };
+		E48E5182176F7E440079B482 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4280621176F7D9200B498E5 /* UIKit.framework */; };
+		E48E5183176F7E440079B482 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E428061D176F7D9200B498E5 /* Foundation.framework */; };
+		E48E5185176F7E440079B482 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4280628176F7D9200B498E5 /* InfoPlist.strings */; };
+		E48E5186176F7E440079B482 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4280634176F7D9200B498E5 /* Images.xcassets */; };
+		E48E518C176F7E7A0079B482 /* PlannerIntegrationTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = E48E518B176F7E440079B482 /* PlannerIntegrationTests.plist */; };
+		E48E51AA176F7F420079B482 /* NSFileManager+AppLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E5190176F7F420079B482 /* NSFileManager+AppLibrary.m */; };
+		E48E51AB176F7F420079B482 /* NSManagedObject+ObjectCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E5192176F7F420079B482 /* NSManagedObject+ObjectCreation.m */; };
+		E48E51AC176F7F420079B482 /* TCCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E5195176F7F420079B482 /* TCCoreDataStore.m */; };
+		E48E51AD176F7F420079B482 /* TCGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E5198176F7F420079B482 /* TCGraph.m */; };
+		E48E51AE176F7F420079B482 /* TCHabit.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E519A176F7F420079B482 /* TCHabit.m */; };
+		E48E51AF176F7F420079B482 /* TCHabitTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E519C176F7F420079B482 /* TCHabitTask.m */; };
+		E48E51B0176F7F420079B482 /* TCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E519E176F7F420079B482 /* TCNode.m */; };
+		E48E51B2176F7F420079B482 /* TCSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E51A2176F7F420079B482 /* TCSpecificDaysSchedule.m */; };
+		E48E51B3176F7F420079B482 /* TCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E51A4176F7F420079B482 /* TCTask.m */; };
+		E48E51B4176F7F420079B482 /* TCTaskValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E51A6176F7F420079B482 /* TCTaskValidation.m */; };
+		E48E51B5176F7F420079B482 /* TCGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E51A9176F7F420079B482 /* TCGraphView.m */; };
+		E4B6FFE71773663400ECC2BD /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B6FFE61773663400ECC2BD /* Storyboard.storyboard */; };
+		E4C19C93177438C600E56BEF /* TCGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C19C92177438C600E56BEF /* TCGraphViewController.m */; };
+		E4C19C9617743A4600E56BEF /* UIStoryboard+TCStoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C19C9517743A4600E56BEF /* UIStoryboard+TCStoryBoard.m */; };
+		E4DEFD2E1774FC7B00CF8A7E /* TCPhysicsGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD2D1774FC7B00CF8A7E /* TCPhysicsGraph.m */; };
+		E7D097FCB63D4E649A7C97B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B91BDB82014FF59726F92F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +69,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46B91BDB82014FF59726F92F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B93D18284AC43D3B46A84A4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		A5F83601D464480C96BED4DF /* libPods-PlannerIntegrationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlannerIntegrationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC5096079314411D9160EB5C /* Pods-PlannerIntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerIntegrationTests.xcconfig"; path = "Pods/Pods-PlannerIntegrationTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		E426F3BD177146C7001EA3BA /* TCNonSpecificDaysSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCNonSpecificDaysSchedule.h; sourceTree = "<group>"; };
+		E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCNonSpecificDaysSchedule.m; sourceTree = "<group>"; };
+		E426F3C21772154C001EA3BA /* TCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCalendar.h; sourceTree = "<group>"; };
+		E426F3C31772154C001EA3BA /* TCCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCalendar.m; sourceTree = "<group>"; };
+		E426F3C61772171F001EA3BA /* TCCalendarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCalendarTests.m; sourceTree = "<group>"; };
 		E428061A176F7D9200B498E5 /* Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E428061D176F7D9200B498E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E428061F176F7D9200B498E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,13 +89,48 @@
 		E428062D176F7D9200B498E5 /* Planner-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Planner-Prefix.pch"; sourceTree = "<group>"; };
 		E428062E176F7D9200B498E5 /* TCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
 		E428062F176F7D9200B498E5 /* TCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
-		E4280632176F7D9200B498E5 /* Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Planner.xcdatamodel; sourceTree = "<group>"; };
 		E4280634176F7D9200B498E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E428063A176F7D9300B498E5 /* PlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlannerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E428063B176F7D9300B498E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E4280644176F7D9300B498E5 /* PlannerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlannerTests-Info.plist"; sourceTree = "<group>"; };
 		E4280646176F7D9300B498E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4280648176F7D9300B498E5 /* PlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlannerTests.m; sourceTree = "<group>"; };
+		E4280653176F7FE200B498E5 /* Planner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Planner.xcdatamodel; sourceTree = "<group>"; };
+		E44047F9176F808600E51384 /* NSDate+TCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TCAdditions.h"; sourceTree = "<group>"; };
+		E44047FA176F808600E51384 /* NSDate+TCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TCAdditions.m"; sourceTree = "<group>"; };
+		E44047FC176F81A700E51384 /* TCSpecificDaysScheduleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSpecificDaysScheduleTests.m; sourceTree = "<group>"; };
+		E48E518A176F7E440079B482 /* Planner copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Planner copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48E518B176F7E440079B482 /* PlannerIntegrationTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = PlannerIntegrationTests.plist; path = /Users/theo/dev/Planner/PlannerIntegrationTests.plist; sourceTree = "<absolute>"; };
+		E48E518F176F7F420079B482 /* NSFileManager+AppLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+AppLibrary.h"; sourceTree = "<group>"; };
+		E48E5190176F7F420079B482 /* NSFileManager+AppLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+AppLibrary.m"; sourceTree = "<group>"; };
+		E48E5191176F7F420079B482 /* NSManagedObject+ObjectCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ObjectCreation.h"; sourceTree = "<group>"; };
+		E48E5192176F7F420079B482 /* NSManagedObject+ObjectCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ObjectCreation.m"; sourceTree = "<group>"; };
+		E48E5194176F7F420079B482 /* TCCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCoreDataStore.h; sourceTree = "<group>"; };
+		E48E5195176F7F420079B482 /* TCCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCCoreDataStore.m; sourceTree = "<group>"; };
+		E48E5197176F7F420079B482 /* TCGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGraph.h; sourceTree = "<group>"; };
+		E48E5198176F7F420079B482 /* TCGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCGraph.m; sourceTree = "<group>"; };
+		E48E5199176F7F420079B482 /* TCHabit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCHabit.h; sourceTree = "<group>"; };
+		E48E519A176F7F420079B482 /* TCHabit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCHabit.m; sourceTree = "<group>"; };
+		E48E519B176F7F420079B482 /* TCHabitTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCHabitTask.h; sourceTree = "<group>"; };
+		E48E519C176F7F420079B482 /* TCHabitTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCHabitTask.m; sourceTree = "<group>"; };
+		E48E519D176F7F420079B482 /* TCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCNode.h; sourceTree = "<group>"; };
+		E48E519E176F7F420079B482 /* TCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCNode.m; sourceTree = "<group>"; };
+		E48E51A1176F7F420079B482 /* TCSpecificDaysSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSpecificDaysSchedule.h; sourceTree = "<group>"; };
+		E48E51A2176F7F420079B482 /* TCSpecificDaysSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSpecificDaysSchedule.m; sourceTree = "<group>"; };
+		E48E51A3176F7F420079B482 /* TCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTask.h; sourceTree = "<group>"; };
+		E48E51A4176F7F420079B482 /* TCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTask.m; sourceTree = "<group>"; };
+		E48E51A5176F7F420079B482 /* TCTaskValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTaskValidation.h; sourceTree = "<group>"; };
+		E48E51A6176F7F420079B482 /* TCTaskValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTaskValidation.m; sourceTree = "<group>"; };
+		E48E51A8176F7F420079B482 /* TCGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGraphView.h; sourceTree = "<group>"; };
+		E48E51A9176F7F420079B482 /* TCGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCGraphView.m; sourceTree = "<group>"; };
+		E4B6FFE61773663400ECC2BD /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		E4C19C91177438C600E56BEF /* TCGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCGraphViewController.h; path = "View Controller/TCGraphViewController.h"; sourceTree = "<group>"; };
+		E4C19C92177438C600E56BEF /* TCGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCGraphViewController.m; path = "View Controller/TCGraphViewController.m"; sourceTree = "<group>"; };
+		E4C19C9417743A4600E56BEF /* UIStoryboard+TCStoryBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+TCStoryBoard.h"; sourceTree = "<group>"; };
+		E4C19C9517743A4600E56BEF /* UIStoryboard+TCStoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+TCStoryBoard.m"; sourceTree = "<group>"; };
+		E4CAE35E1770B04500B2C892 /* TCSchedulable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCSchedulable.h; path = Protocols/TCSchedulable.h; sourceTree = "<group>"; };
+		E4DEFD2C1774FC7B00CF8A7E /* TCPhysicsGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPhysicsGraph.h; sourceTree = "<group>"; };
+		E4DEFD2D1774FC7B00CF8A7E /* TCPhysicsGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPhysicsGraph.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +142,7 @@
 				E4280624176F7D9200B498E5 /* CoreData.framework in Frameworks */,
 				E4280622176F7D9200B498E5 /* UIKit.framework in Frameworks */,
 				E428061E176F7D9200B498E5 /* Foundation.framework in Frameworks */,
+				E7D097FCB63D4E649A7C97B6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +157,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E48E517F176F7E440079B482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E48E5180176F7E440079B482 /* CoreGraphics.framework in Frameworks */,
+				E48E5181176F7E440079B482 /* CoreData.framework in Frameworks */,
+				E48E5182176F7E440079B482 /* UIKit.framework in Frameworks */,
+				E48E5183176F7E440079B482 /* Foundation.framework in Frameworks */,
+				6649BE139A6444F09FEE5A89 /* libPods-PlannerIntegrationTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +179,9 @@
 				E4280642176F7D9300B498E5 /* PlannerTests */,
 				E428061C176F7D9200B498E5 /* Frameworks */,
 				E428061B176F7D9200B498E5 /* Products */,
+				E48E518B176F7E440079B482 /* PlannerIntegrationTests.plist */,
+				9B93D18284AC43D3B46A84A4 /* Pods.xcconfig */,
+				DC5096079314411D9160EB5C /* Pods-PlannerIntegrationTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +190,7 @@
 			children = (
 				E428061A176F7D9200B498E5 /* Planner.app */,
 				E428063A176F7D9300B498E5 /* PlannerTests.xctest */,
+				E48E518A176F7E440079B482 /* Planner copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +203,8 @@
 				E4280621176F7D9200B498E5 /* UIKit.framework */,
 				E4280623176F7D9200B498E5 /* CoreData.framework */,
 				E428063B176F7D9300B498E5 /* XCTest.framework */,
+				46B91BDB82014FF59726F92F /* libPods.a */,
+				A5F83601D464480C96BED4DF /* libPods-PlannerIntegrationTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,10 +212,11 @@
 		E4280625176F7D9200B498E5 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				E48E518D176F7F420079B482 /* Application */,
 				E428062E176F7D9200B498E5 /* TCAppDelegate.h */,
 				E428062F176F7D9200B498E5 /* TCAppDelegate.m */,
+				E4280652176F7FE200B498E5 /* Planner.xcdatamodeld */,
 				E4280634176F7D9200B498E5 /* Images.xcassets */,
-				E4280631176F7D9200B498E5 /* Planner.xcdatamodeld */,
 				E4280626176F7D9200B498E5 /* Supporting Files */,
 			);
 			path = Planner;
@@ -138,6 +236,8 @@
 		E4280642176F7D9300B498E5 /* PlannerTests */ = {
 			isa = PBXGroup;
 			children = (
+				E44047FC176F81A700E51384 /* TCSpecificDaysScheduleTests.m */,
+				E426F3C61772171F001EA3BA /* TCCalendarTests.m */,
 				E4280648176F7D9300B498E5 /* PlannerTests.m */,
 				E4280643176F7D9300B498E5 /* Supporting Files */,
 			);
@@ -153,6 +253,97 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E48E518D176F7F420079B482 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E4C19C901774389800E56BEF /* View Controllers */,
+				E4CAE35D1770AFED00B2C892 /* Protocols */,
+				E48E518E176F7F420079B482 /* Categories */,
+				E48E5193176F7F420079B482 /* Controllers */,
+				E48E5196176F7F420079B482 /* Models */,
+				E48E51A7176F7F420079B482 /* Views */,
+				E4B6FFE61773663400ECC2BD /* Storyboard.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E48E518E176F7F420079B482 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E48E518F176F7F420079B482 /* NSFileManager+AppLibrary.h */,
+				E48E5190176F7F420079B482 /* NSFileManager+AppLibrary.m */,
+				E48E5191176F7F420079B482 /* NSManagedObject+ObjectCreation.h */,
+				E48E5192176F7F420079B482 /* NSManagedObject+ObjectCreation.m */,
+				E44047F9176F808600E51384 /* NSDate+TCAdditions.h */,
+				E44047FA176F808600E51384 /* NSDate+TCAdditions.m */,
+				E4C19C9417743A4600E56BEF /* UIStoryboard+TCStoryBoard.h */,
+				E4C19C9517743A4600E56BEF /* UIStoryboard+TCStoryBoard.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E48E5193176F7F420079B482 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E48E5194176F7F420079B482 /* TCCoreDataStore.h */,
+				E48E5195176F7F420079B482 /* TCCoreDataStore.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E48E5196176F7F420079B482 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E48E5197176F7F420079B482 /* TCGraph.h */,
+				E48E5198176F7F420079B482 /* TCGraph.m */,
+				E48E5199176F7F420079B482 /* TCHabit.h */,
+				E48E519A176F7F420079B482 /* TCHabit.m */,
+				E48E519B176F7F420079B482 /* TCHabitTask.h */,
+				E48E519C176F7F420079B482 /* TCHabitTask.m */,
+				E48E519D176F7F420079B482 /* TCNode.h */,
+				E48E519E176F7F420079B482 /* TCNode.m */,
+				E48E51A1176F7F420079B482 /* TCSpecificDaysSchedule.h */,
+				E48E51A2176F7F420079B482 /* TCSpecificDaysSchedule.m */,
+				E426F3BD177146C7001EA3BA /* TCNonSpecificDaysSchedule.h */,
+				E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */,
+				E48E51A3176F7F420079B482 /* TCTask.h */,
+				E48E51A4176F7F420079B482 /* TCTask.m */,
+				E48E51A5176F7F420079B482 /* TCTaskValidation.h */,
+				E48E51A6176F7F420079B482 /* TCTaskValidation.m */,
+				E426F3C21772154C001EA3BA /* TCCalendar.h */,
+				E426F3C31772154C001EA3BA /* TCCalendar.m */,
+				E4DEFD2C1774FC7B00CF8A7E /* TCPhysicsGraph.h */,
+				E4DEFD2D1774FC7B00CF8A7E /* TCPhysicsGraph.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E48E51A7176F7F420079B482 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E48E51A8176F7F420079B482 /* TCGraphView.h */,
+				E48E51A9176F7F420079B482 /* TCGraphView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E4C19C901774389800E56BEF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4C19C91177438C600E56BEF /* TCGraphViewController.h */,
+				E4C19C92177438C600E56BEF /* TCGraphViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E4CAE35D1770AFED00B2C892 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E4CAE35E1770B04500B2C892 /* TCSchedulable.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,9 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E428064C176F7D9300B498E5 /* Build configuration list for PBXNativeTarget "Planner" */;
 			buildPhases = (
+				656C3EEBF6C34F7C82176715 /* Check Pods Manifest.lock */,
 				E4280616176F7D9200B498E5 /* Sources */,
 				E4280617176F7D9200B498E5 /* Frameworks */,
 				E4280618176F7D9200B498E5 /* Resources */,
+				45959944DFE547719118C6A7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,6 +383,25 @@
 			productName = PlannerTests;
 			productReference = E428063A176F7D9300B498E5 /* PlannerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E48E517A176F7E440079B482 /* PlannerIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E48E5187176F7E440079B482 /* Build configuration list for PBXNativeTarget "PlannerIntegrationTests" */;
+			buildPhases = (
+				99745C1CCCE3491083343C0B /* Check Pods Manifest.lock */,
+				E48E517B176F7E440079B482 /* Sources */,
+				E48E517F176F7E440079B482 /* Frameworks */,
+				E48E5184176F7E440079B482 /* Resources */,
+				8ADCB99128814C37B6A6C938 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlannerIntegrationTests;
+			productName = Planner;
+			productReference = E48E518A176F7E440079B482 /* Planner copy.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -220,6 +432,7 @@
 			targets = (
 				E4280619176F7D9200B498E5 /* Planner */,
 				E4280639176F7D9300B498E5 /* PlannerTests */,
+				E48E517A176F7E440079B482 /* PlannerIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +444,7 @@
 			files = (
 				E428062A176F7D9200B498E5 /* InfoPlist.strings in Resources */,
 				E4280635176F7D9200B498E5 /* Images.xcassets in Resources */,
+				E4B6FFE71773663400ECC2BD /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,16 +456,102 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E48E5184176F7E440079B482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E48E5185176F7E440079B482 /* InfoPlist.strings in Resources */,
+				E48E5186176F7E440079B482 /* Images.xcassets in Resources */,
+				E48E518C176F7E7A0079B482 /* PlannerIntegrationTests.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45959944DFE547719118C6A7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		656C3EEBF6C34F7C82176715 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		8ADCB99128814C37B6A6C938 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PlannerIntegrationTests-resources.sh\"\n";
+		};
+		99745C1CCCE3491083343C0B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E4280616176F7D9200B498E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E426F3C41772154C001EA3BA /* TCCalendar.m in Sources */,
+				E4280654176F7FE200B498E5 /* Planner.xcdatamodeld in Sources */,
+				E4C19C9617743A4600E56BEF /* UIStoryboard+TCStoryBoard.m in Sources */,
+				E4DEFD2E1774FC7B00CF8A7E /* TCPhysicsGraph.m in Sources */,
 				E428062C176F7D9200B498E5 /* main.m in Sources */,
 				E4280630176F7D9200B498E5 /* TCAppDelegate.m in Sources */,
-				E4280633176F7D9200B498E5 /* Planner.xcdatamodeld in Sources */,
+				E4C19C93177438C600E56BEF /* TCGraphViewController.m in Sources */,
+				E48E51AA176F7F420079B482 /* NSFileManager+AppLibrary.m in Sources */,
+				E48E51AB176F7F420079B482 /* NSManagedObject+ObjectCreation.m in Sources */,
+				E48E51AC176F7F420079B482 /* TCCoreDataStore.m in Sources */,
+				E48E51AD176F7F420079B482 /* TCGraph.m in Sources */,
+				E48E51AE176F7F420079B482 /* TCHabit.m in Sources */,
+				E48E51AF176F7F420079B482 /* TCHabitTask.m in Sources */,
+				E48E51B0176F7F420079B482 /* TCNode.m in Sources */,
+				E48E51B2176F7F420079B482 /* TCSpecificDaysSchedule.m in Sources */,
+				E48E51B3176F7F420079B482 /* TCTask.m in Sources */,
+				E426F3BF177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */,
+				E48E51B4176F7F420079B482 /* TCTaskValidation.m in Sources */,
+				E48E51B5176F7F420079B482 /* TCGraphView.m in Sources */,
+				E44047FB176F808600E51384 /* NSDate+TCAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +559,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E426F3C51772154C001EA3BA /* TCCalendar.m in Sources */,
+				E44047FD176F81A700E51384 /* TCSpecificDaysScheduleTests.m in Sources */,
 				E4280649176F7D9300B498E5 /* PlannerTests.m in Sources */,
+				E426F3C0177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */,
+				E426F3C71772171F001EA3BA /* TCCalendarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48E517B176F7E440079B482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E48E517C176F7E440079B482 /* main.m in Sources */,
+				E48E517D176F7E440079B482 /* TCAppDelegate.m in Sources */,
+				E426F3C1177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +679,7 @@
 		};
 		E428064D176F7D9300B498E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B93D18284AC43D3B46A84A4 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -372,12 +687,14 @@
 				GCC_PREFIX_HEADER = "Planner/Planner-Prefix.pch";
 				INFOPLIST_FILE = "Planner/Planner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		E428064E176F7D9300B498E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B93D18284AC43D3B46A84A4 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -385,6 +702,7 @@
 				GCC_PREFIX_HEADER = "Planner/Planner-Prefix.pch";
 				INFOPLIST_FILE = "Planner/Planner-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -429,6 +747,34 @@
 			};
 			name = Release;
 		};
+		E48E5188176F7E440079B482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC5096079314411D9160EB5C /* Pods-PlannerIntegrationTests.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Planner/Planner-Prefix.pch";
+				INFOPLIST_FILE = "Planner copy-Info.plist";
+				PRODUCT_NAME = "Planner copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E48E5189176F7E440079B482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC5096079314411D9160EB5C /* Pods-PlannerIntegrationTests.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Planner/Planner-Prefix.pch";
+				INFOPLIST_FILE = "Planner copy-Info.plist";
+				PRODUCT_NAME = "Planner copy";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -448,6 +794,7 @@
 				E428064E176F7D9300B498E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E428064F176F7D9300B498E5 /* Build configuration list for PBXNativeTarget "PlannerTests" */ = {
 			isa = XCConfigurationList;
@@ -456,16 +803,26 @@
 				E4280651176F7D9300B498E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E48E5187176F7E440079B482 /* Build configuration list for PBXNativeTarget "PlannerIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E48E5188176F7E440079B482 /* Debug */,
+				E48E5189176F7E440079B482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E4280631176F7D9200B498E5 /* Planner.xcdatamodeld */ = {
+		E4280652176F7FE200B498E5 /* Planner.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E4280632176F7D9200B498E5 /* Planner.xcdatamodel */,
+				E4280653176F7FE200B498E5 /* Planner.xcdatamodel */,
 			);
-			currentVersion = E4280632176F7D9200B498E5 /* Planner.xcdatamodel */;
+			currentVersion = E4280653176F7FE200B498E5 /* Planner.xcdatamodel */;
 			path = Planner.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

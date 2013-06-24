@@ -9,14 +9,16 @@
 #import "TCMindMapScrollView.h"
 #import "TCMindMap.h"
 
-static const float kMinimumZoomScale = 1.0 / 5.0;
-static const float kMaximumZoomScale = 1.0;
+static const float kMinimumZoomScale = 1.0;
+static const float kMaximumZoomScale = 6.0;
 
 @interface TCMindMapScrollView () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
-@property (strong, nonatomic) TCMindMap *mindMap;
 @end
 
 @implementation TCMindMapScrollView
+{
+    UIView *placeholder;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -24,14 +26,14 @@ static const float kMaximumZoomScale = 1.0;
     if (self) {
         
         CGSize viewSize = frame.size;
-        CGRect contentFrame = CGRectMake(0, 0, (1.0 / kMinimumZoomScale) * viewSize.width, (1.0 / kMinimumZoomScale) * viewSize.height);
+        CGRect contentFrame = self.bounds;
         self.contentSize = contentFrame.size;
         self.delegate = self;
         self.maximumZoomScale = kMaximumZoomScale;
         self.minimumZoomScale = kMinimumZoomScale;
         self.canCancelContentTouches = NO;
         self.multipleTouchEnabled = YES;
-        [self setZoomScale:1.0 animated:YES];
+        [self setZoomScale:5.0 animated:YES];
 
         CGPoint start = BKCenterRect(frame, BKRectCenter(contentFrame)).origin;
         self.contentOffset = start;
@@ -40,7 +42,11 @@ static const float kMaximumZoomScale = 1.0;
         self.mindMap.backgroundColor = [UIColor whiteColor];
         self.mindMap.scrollView = self;
 
-        [self addSubview:self.mindMap];
+        placeholder = [[UIView alloc] initWithFrame:self.mindMap.frame];
+        [placeholder setBackgroundColor:[UIColor clearColor]];
+
+        [self addSubview:placeholder];
+        //[self addSubview:self.mindMap];
     }
     return self;
 }
@@ -49,11 +55,12 @@ static const float kMaximumZoomScale = 1.0;
 {
     _topNode = topNode;
     self.mindMap.topNode = topNode;
+    self.contentOffset = BKSubPoints(topNode.drawingData.center, CGPointMake(50, 50));
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return self.mindMap;
+    return placeholder;
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
@@ -85,6 +92,11 @@ static const float kMaximumZoomScale = 1.0;
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.mindMap setNeedsDisplay];
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
     [self.mindMap setNeedsDisplay];
 }

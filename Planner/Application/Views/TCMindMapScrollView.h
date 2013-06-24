@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class TCMindMap;
+
 @interface TCMindMapScrollView : UIScrollView
 @property (strong, nonatomic) TCNode *topNode;
+@property (strong, nonatomic) TCMindMap *mindMap;
 
 @end

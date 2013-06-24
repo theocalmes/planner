@@ -44,6 +44,11 @@ CGPoint BKScalePoint(CGPoint p1, CGPoint scale)
     return CGPointMake(p1.x * scale.x, p1.y * scale.y);
 }
 
+CGPoint BKScalePoint1D(CGPoint p1, float scale)
+{
+    return CGPointMake(p1.x * scale, p1.y * scale);
+}
+
 CGRect BKAddRects(CGRect r1, CGRect r2)
 {
     return CGRectMake(r1.origin.x + r2.origin.x,

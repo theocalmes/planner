@@ -8,6 +8,7 @@
 
 #import "TCMindMapViewController.h"
 #import "TCMindMapScrollView.h"
+#import "TCMindMap.h"
 
 @interface TCMindMapViewController ()
 @end
@@ -38,11 +39,12 @@
  */
     TCNode *top = [TCNode createNewUsingMainContextQueue:YES];
     top.name = @"Develop App";
-    CGPoint center = CGPointMake(scrollView.contentSize.width /2.0, scrollView.contentSize.height/2.0);
+    CGPoint center = CGPointMake(scrollView.contentSize.width * 6.0 /2.0, scrollView.contentSize.height * 6.0 /2.0);
     top.drawingData.centerPointString = NSStringFromCGPoint(center);
 
     scrollView.topNode = top;
 
+    [self.view addSubview:scrollView.mindMap];
     [self.view addSubview:scrollView];
 }
 - (void)didReceiveMemoryWarning

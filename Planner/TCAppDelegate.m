@@ -9,17 +9,38 @@
 #import "TCAppDelegate.h"
 #import "TCGraphViewController.h"
 
+#import "TCMindMap.h"
+#import "TCMindMapViewController.h"
+
 
 @implementation TCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
+/*
     [self loadTestData];
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     self.window.rootViewController = [storyboard instantiateInitialViewController];
+*/
+    /*
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([TCNode class])];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"parent = nil"]];
+
+    NSArray *results = [[TCCoreDataStore mainQueueContext] executeFetchRequest:fetchRequest error:nil];
+    TCNode *top = [results lastObject];
+
+
+    TCMindMap *mindMap = [[TCMindMap alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
+    mindMap.backgroundColor = [UIColor whiteColor];
+    mindMap.topNode = top;
+    [self.window addSubview:mindMap];
+     */
+
+    TCMindMapViewController *vc = [[TCMindMapViewController alloc] init];
+    [self.window setRootViewController:vc];
+    
 
     [self.window makeKeyAndVisible];
     

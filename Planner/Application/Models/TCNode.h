@@ -11,6 +11,7 @@
 
 @class TCNode;
 @class TCPhysicsGraph;
+@class TCDrawingData;
 
 typedef void(^TCApply)(TCNode *current);
 
@@ -22,6 +23,7 @@ typedef void(^TCApply)(TCNode *current);
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *children;
 @property (nonatomic, retain) TCNode *parent;
+@property (nonatomic, retain) TCDrawingData *drawingData;
 
 - (void)traverse:(TCApply)applyBlock;
 

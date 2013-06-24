@@ -9,6 +9,7 @@
 #import "TCNode.h"
 #import "TCGraph.h"
 #import "TCPhysicsGraph.h"
+#import "TCDrawingData.h"
 
 @implementation TCNode
 
@@ -18,6 +19,7 @@
 @dynamic name;
 @dynamic children;
 @dynamic parent;
+@dynamic drawingData;
 
 - (NSString *)description
 {
@@ -106,6 +108,9 @@
 {
     id obj = [super createNewUsingMainContextQueue:useMainContext];
     [obj setCreationDate:[NSDate new]];
+
+    TCDrawingData *drawingData = [[TCDrawingData class] createNewUsingMainContextQueue:useMainContext];
+    [obj setDrawingData:drawingData];
 
     return obj;
 }

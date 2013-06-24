@@ -9,6 +9,7 @@
 #import "TCGraphView.h"
 #import "TCGraph.h"
 #import "TCPhysicsGraph.h"
+#import "TCDrawingData.h"
 
 #import "UIView+Frame.h"
 /*
@@ -134,6 +135,12 @@ float distance(CGPoint a, CGPoint b)
     self.touchPoint = touchPoint;
 
     self.touchIndex = [self indexOfVertexForTouchLocation:touchPoint];
+
+    for (TCNode *n in self.graph.objects) {
+        n.drawingData.centerPointString = NSStringFromCGPoint([self.graph bodyForVertex:[self.graph vertexForObject:n]].p);
+    }
+
+    [[TCCoreDataStore mainQueueContext] save:nil];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event

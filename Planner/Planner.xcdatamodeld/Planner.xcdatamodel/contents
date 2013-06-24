@@ -8,6 +8,10 @@
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="calendar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TCCalendar" inverseName="completionDates" inverseEntity="TCCalendar" syncable="YES"/>
     </entity>
+    <entity name="TCDrawingData" representedClassName="TCDrawingData" syncable="YES">
+        <attribute name="centerPointString" optional="YES" attributeType="String" defaultValueString="{0,0}" syncable="YES"/>
+        <relationship name="node" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TCNode" inverseName="drawingData" inverseEntity="TCNode" syncable="YES"/>
+    </entity>
     <entity name="TCHabit" representedClassName="TCHabit" parentEntity="TCNode" syncable="YES">
         <attribute name="completedCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="incompletedCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -24,6 +28,7 @@
         <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TCNode" inverseName="parent" inverseEntity="TCNode" syncable="YES"/>
+        <relationship name="drawingData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TCDrawingData" inverseName="node" inverseEntity="TCDrawingData" syncable="YES"/>
         <relationship name="parent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TCNode" inverseName="children" inverseEntity="TCNode" syncable="YES"/>
     </entity>
     <entity name="TCTask" representedClassName="TCTask" parentEntity="TCNode" syncable="YES">
@@ -32,12 +37,13 @@
     </entity>
     <entity name="TCTaskValidation" representedClassName="TCTaskValidation" parentEntity="TCTask" syncable="YES"/>
     <elements>
+        <element name="TCCalendar" positionX="0" positionY="0" width="0" height="0"/>
         <element name="TCDate" positionX="0" positionY="0" width="0" height="0"/>
         <element name="TCHabit" positionX="0" positionY="0" width="0" height="0"/>
         <element name="TCHabitTask" positionX="0" positionY="0" width="0" height="0"/>
         <element name="TCNode" positionX="0" positionY="0" width="0" height="0"/>
         <element name="TCTask" positionX="0" positionY="0" width="0" height="0"/>
         <element name="TCTaskValidation" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="TCCalendar" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TCDrawingData" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

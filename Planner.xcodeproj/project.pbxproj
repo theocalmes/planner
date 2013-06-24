@@ -55,6 +55,10 @@
 		E4C19C93177438C600E56BEF /* TCGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C19C92177438C600E56BEF /* TCGraphViewController.m */; };
 		E4C19C9617743A4600E56BEF /* UIStoryboard+TCStoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C19C9517743A4600E56BEF /* UIStoryboard+TCStoryBoard.m */; };
 		E4DEFD2E1774FC7B00CF8A7E /* TCPhysicsGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD2D1774FC7B00CF8A7E /* TCPhysicsGraph.m */; };
+		E4DEFD311776613400CF8A7E /* TCDrawingData.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD301776613400CF8A7E /* TCDrawingData.m */; };
+		E4DEFD34177661F500CF8A7E /* TCMindMap.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD33177661F500CF8A7E /* TCMindMap.m */; };
+		E4DEFD371776913A00CF8A7E /* TCMindMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD361776913A00CF8A7E /* TCMindMapViewController.m */; };
+		E4DEFD3D1777A35600CF8A7E /* TCMindMapScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD3C1777A35600CF8A7E /* TCMindMapScrollView.m */; };
 		E7D097FCB63D4E649A7C97B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B91BDB82014FF59726F92F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +135,14 @@
 		E4CAE35E1770B04500B2C892 /* TCSchedulable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCSchedulable.h; path = Protocols/TCSchedulable.h; sourceTree = "<group>"; };
 		E4DEFD2C1774FC7B00CF8A7E /* TCPhysicsGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPhysicsGraph.h; sourceTree = "<group>"; };
 		E4DEFD2D1774FC7B00CF8A7E /* TCPhysicsGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPhysicsGraph.m; sourceTree = "<group>"; };
+		E4DEFD2F1776613400CF8A7E /* TCDrawingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDrawingData.h; sourceTree = "<group>"; };
+		E4DEFD301776613400CF8A7E /* TCDrawingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCDrawingData.m; sourceTree = "<group>"; };
+		E4DEFD32177661F500CF8A7E /* TCMindMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMindMap.h; sourceTree = "<group>"; };
+		E4DEFD33177661F500CF8A7E /* TCMindMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMindMap.m; sourceTree = "<group>"; };
+		E4DEFD351776913A00CF8A7E /* TCMindMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMindMapViewController.h; path = "View Controller/TCMindMapViewController.h"; sourceTree = "<group>"; };
+		E4DEFD361776913A00CF8A7E /* TCMindMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMindMapViewController.m; path = "View Controller/TCMindMapViewController.m"; sourceTree = "<group>"; };
+		E4DEFD3B1777A35600CF8A7E /* TCMindMapScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMindMapScrollView.h; sourceTree = "<group>"; };
+		E4DEFD3C1777A35600CF8A7E /* TCMindMapScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMindMapScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +306,8 @@
 		E48E5196176F7F420079B482 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E4DEFD2F1776613400CF8A7E /* TCDrawingData.h */,
+				E4DEFD301776613400CF8A7E /* TCDrawingData.m */,
 				E48E5197176F7F420079B482 /* TCGraph.h */,
 				E48E5198176F7F420079B482 /* TCGraph.m */,
 				E48E5199176F7F420079B482 /* TCHabit.h */,
@@ -323,6 +337,10 @@
 			children = (
 				E48E51A8176F7F420079B482 /* TCGraphView.h */,
 				E48E51A9176F7F420079B482 /* TCGraphView.m */,
+				E4DEFD32177661F500CF8A7E /* TCMindMap.h */,
+				E4DEFD33177661F500CF8A7E /* TCMindMap.m */,
+				E4DEFD3B1777A35600CF8A7E /* TCMindMapScrollView.h */,
+				E4DEFD3C1777A35600CF8A7E /* TCMindMapScrollView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +350,8 @@
 			children = (
 				E4C19C91177438C600E56BEF /* TCGraphViewController.h */,
 				E4C19C92177438C600E56BEF /* TCGraphViewController.m */,
+				E4DEFD351776913A00CF8A7E /* TCMindMapViewController.h */,
+				E4DEFD361776913A00CF8A7E /* TCMindMapViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -537,8 +557,10 @@
 				E4C19C9617743A4600E56BEF /* UIStoryboard+TCStoryBoard.m in Sources */,
 				E4DEFD2E1774FC7B00CF8A7E /* TCPhysicsGraph.m in Sources */,
 				E428062C176F7D9200B498E5 /* main.m in Sources */,
+				E4DEFD371776913A00CF8A7E /* TCMindMapViewController.m in Sources */,
 				E4280630176F7D9200B498E5 /* TCAppDelegate.m in Sources */,
 				E4C19C93177438C600E56BEF /* TCGraphViewController.m in Sources */,
+				E4DEFD34177661F500CF8A7E /* TCMindMap.m in Sources */,
 				E48E51AA176F7F420079B482 /* NSFileManager+AppLibrary.m in Sources */,
 				E48E51AB176F7F420079B482 /* NSManagedObject+ObjectCreation.m in Sources */,
 				E48E51AC176F7F420079B482 /* TCCoreDataStore.m in Sources */,
@@ -547,11 +569,13 @@
 				E48E51AF176F7F420079B482 /* TCHabitTask.m in Sources */,
 				E48E51B0176F7F420079B482 /* TCNode.m in Sources */,
 				E48E51B2176F7F420079B482 /* TCSpecificDaysSchedule.m in Sources */,
+				E4DEFD311776613400CF8A7E /* TCDrawingData.m in Sources */,
 				E48E51B3176F7F420079B482 /* TCTask.m in Sources */,
 				E426F3BF177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */,
 				E48E51B4176F7F420079B482 /* TCTaskValidation.m in Sources */,
 				E48E51B5176F7F420079B482 /* TCGraphView.m in Sources */,
 				E44047FB176F808600E51384 /* NSDate+TCAdditions.m in Sources */,
+				E4DEFD3D1777A35600CF8A7E /* TCMindMapScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

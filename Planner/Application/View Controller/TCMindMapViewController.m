@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     TCMindMapScrollView *scrollView = [[TCMindMapScrollView alloc] initWithFrame:self.view.bounds];
+    [scrollView setZoomScale:6.0 animated:YES];
     
     
 
@@ -39,7 +40,7 @@
  */
     TCNode *top = [TCNode createNewUsingMainContextQueue:YES];
     top.name = @"Develop App";
-    CGPoint center = CGPointMake(scrollView.contentSize.width * 6.0 /2.0, scrollView.contentSize.height * 6.0 /2.0);
+    CGPoint center = CGPointMake(scrollView.mindMap.bounds.size.width * 6.0 /2.0, scrollView.mindMap.bounds.size.height * 6.0 /2.0);
     top.drawingData.centerPointString = NSStringFromCGPoint(center);
 
     scrollView.topNode = top;

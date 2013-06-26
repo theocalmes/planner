@@ -29,6 +29,13 @@ CGRect BKScaleRect(CGRect rect, CGPoint scale)
     return BKCenterRect(scaled, iniCenter);
 }
 
+CGRect BKScaleRect1D(CGRect rect, float scale)
+{
+    CGPoint iniCenter = BKRectCenter(rect);
+    CGRect scaled = CGRectMake(0, 0, rect.size.width*scale, rect.size.height*scale);
+    return BKCenterRect(scaled, iniCenter);
+}
+
 CGPoint BKAddPoints(CGPoint p1, CGPoint p2)
 {
     return CGPointMake(p1.x + p2.x, p1.y + p2.y);

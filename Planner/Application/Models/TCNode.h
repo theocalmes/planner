@@ -29,6 +29,7 @@ typedef void(^TCApply)(TCNode *current);
 
 - (NSSet *)leaves;
 - (NSSet *)branches;
+- (NSSet *)allNodes;
 
 - (NSUInteger)depth;
 

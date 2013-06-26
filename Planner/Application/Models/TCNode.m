@@ -78,6 +78,16 @@
     return branches.copy;
 }
 
+- (NSSet *)allNodes
+{
+    NSMutableSet *nodes = [NSMutableSet new];
+    [self traverse:^(TCNode *current) {
+        [nodes addObject:current];
+    }];
+
+    return nodes.copy;
+}
+
 #pragma mark - Graph Extraction
 
 - (TCPhysicsGraph *)graph

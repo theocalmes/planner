@@ -20,9 +20,11 @@ float d(CGPoint a, CGPoint b)
 @interface TCMindMap ()
 @property (strong, nonatomic) TCNode *selectedNode;
 @property (strong, nonatomic) UIBezierPath *selectedNodeAddButtonPath;
-@property (strong, nonatomic) NSMapTable *nodeToPathMap;
+@property (strong, nonatomic) NSMapTable *nodeToHitBoxPathMap;
+@property (strong, nonatomic) NSMapTable *nodeToDrawingPathMap;
 @property (assign, nonatomic) CGPoint newNodePathEndPoint;
 @property (assign, nonatomic) CGPoint newNodePathStartPoint;
+@property (strong, nonatomic) UIFont *defaultFont;
 @end
 
 @implementation TCMindMap
@@ -35,8 +37,10 @@ float d(CGPoint a, CGPoint b)
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _nodeToPathMap = [NSMapTable strongToStrongObjectsMapTable];
+        _nodeToHitBoxPathMap = [NSMapTable strongToStrongObjectsMapTable];
+        _nodeToDrawingPathMap = [NSMapTable strongToStrongObjectsMapTable];
         _state = TCMindMapStateIdle;
+        _defaultFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     }
     return self;
 }
@@ -45,7 +49,7 @@ float d(CGPoint a, CGPoint b)
 {
     __block TCNode *node = nil;
     [self.topNode traverse:^(TCNode *current) {
-        UIBezierPath *path = [self.nodeToPathMap objectForKey:current];
+        UIBezierPath *path = [self.nodeToHitBoxPathMap objectForKey:current];
         if ([path containsPoint:point]) {
             node = current;
         }
@@ -62,6 +66,7 @@ float d(CGPoint a, CGPoint b)
 
 - (void)userDidTouchViewAtPoint:(CGPoint)touchPoint
 {
+    //NSLog(@"point %@, node: %@", NSStringFromCGPoint(touchPoint), self.topNode.drawingData.centerPointString);
     switch (self.state) {
         case TCMindMapStateIdle:
         {
@@ -167,6 +172,8 @@ float d(CGPoint a, CGPoint b)
     UITouch *touch = [[touches allObjects] lastObject];
     CGPoint touchPoint = [touch locationInView:self];
 
+    touchPoint = [self.scrollView convertPoint:touchPoint fromView:self];
+
     [self userDidTouchViewAtPoint:touchPoint];
 }
 
@@ -174,6 +181,8 @@ float d(CGPoint a, CGPoint b)
 {
     UITouch *touch = [[touches allObjects] lastObject];
     CGPoint touchPoint = [touch locationInView:self];
+
+    touchPoint = [self.scrollView convertPoint:touchPoint fromView:self];
 
     [self userDidMoveTouchInViewAtPoint:touchPoint];
 }
@@ -183,8 +192,16 @@ float d(CGPoint a, CGPoint b)
     UITouch *touch = [[touches allObjects] lastObject];
     CGPoint touchPoint = [touch locationInView:self];
 
+    touchPoint = [self.scrollView convertPoint:touchPoint fromView:self];
+
     [self userDidEndTouchInViewAtPoint:touchPoint];
     
+}
+
+- (CGPoint)adjustedPointForPoint:(CGPoint)point
+{
+    float s = self.scrollView.zoomScale * scale;
+    return BKSubPoints(BKScalePoint1D(point, s), self.scrollView.contentOffset);
 }
 
 - (UIBezierPath *)pathBetweenPoint:(CGPoint)p1 point:(CGPoint)p2
@@ -196,10 +213,30 @@ float d(CGPoint a, CGPoint b)
     CGPoint c2 = BKAddPoints(p2, CGPointMake(0, -k * dy));
     
     UIBezierPath *path = [[UIBezierPath alloc] init];
-    [path moveToPoint:p1];
-    [path addCurveToPoint:p2 controlPoint1:c1 controlPoint2:c2];
+    [path moveToPoint:[self adjustedPointForPoint:p1]];
+    [path addCurveToPoint:[self adjustedPointForPoint:p2] controlPoint1:[self adjustedPointForPoint:c1] controlPoint2:[self adjustedPointForPoint:c2]];
 
     return path;
+}
+
+- (void)drawPathForNodeCreationInContext:(CGContextRef)context
+{
+    CGContextSaveGState(context);
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    CGPoint p1 = [self adjustedPointForPoint:self.selectedNode.drawingData.center];
+    CGPoint p2 = [self adjustedPointForPoint:self.newNodePathEndPoint];
+    
+    [path moveToPoint:p1];
+    [path addLineToPoint:p2];
+    
+     float dash[2] = {2,3};
+     CGContextSaveGState(context);
+     CGContextSetLineDash(context, 0, dash, 2);
+    
+    [path stroke];
+    
+    CGContextRestoreGState(context);
 }
 
 - (void)drawNode:(TCNode *)node inContext:(CGContextRef)context
@@ -207,18 +244,26 @@ float d(CGPoint a, CGPoint b)
     CGPoint center = node.drawingData.center;
     NSString *name = node.name;
 
-    float s = 1.0 / self.scrollView.zoomScale;
+    float s = self.scrollView.zoomScale * scale;
+    center = BKSubPoints(BKScalePoint1D(center, s), self.scrollView.contentOffset);
 
-    UIFont *font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    UIFont *font = [self.defaultFont fontWithSize:(self.defaultFont.pointSize * s)];
 
-    CGSize textBoundsIdealSize = CGSizeMake(s * 100, s * 44);
-    CGRect textBounds = [name boundingRectWithSize:textBoundsIdealSize options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
+    CGSize textBoundsIdealSize = [name sizeWithAttributes:@{NSFontAttributeName : font}];
+    CGRect textBounds = (CGRect){CGPointZero, textBoundsIdealSize};
+
+    //CGSize textBoundsIdealSize = CGSizeMake(s * 100, s * 44);
+    //CGRect textBounds = [name boundingRectWithSize:textBoundsIdealSize options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
     textBounds = BKCenterRect(textBounds, center);
 
-    CGRect shapeBase = BKScaleRect(textBounds, CGPointMake(1.3, 1.3));
+    CGRect shapeBase = BKScaleRect1D(textBounds, 1.3);
     UIBezierPath *shape = [UIBezierPath bezierPathWithRoundedRect:shapeBase cornerRadius:2.5];
     shape.lineWidth = 3.0;
-    
+
+    CGRect hitBoxRect = BKScaleRect1D(BKCenterRect(shapeBase, node.drawingData.center), 1.4 / s);
+    UIBezierPath *hitBoxPath = [UIBezierPath bezierPathWithRect:hitBoxRect];
+    [self.nodeToHitBoxPathMap setObject:hitBoxPath forKey:node];
+
     if ([node isEqual:self.selectedNode]) {
         shape.lineWidth = 6.0;
         CGRect base = CGRectMake(0, 0, 10 * s, 10 * s);
@@ -229,86 +274,65 @@ float d(CGPoint a, CGPoint b)
         [[UIColor lightGrayColor] setFill];
         [newNodeButton fill];
 
-        CGRect hitBox = CGRectMake(0, 0, 44 * s, 44 * s);
-        hitBox = BKCenterRect(hitBox, CGPointMake(CGRectGetMaxX(shapeBase) + 22 * s, CGRectGetMidY(shapeBase)));
-        UIBezierPath *hitBoxPath = [UIBezierPath bezierPathWithRect:hitBox];
-        self.selectedNodeAddButtonPath = hitBoxPath;
+        CGRect addButtonHitBoxRect = CGRectMake(0, 0, 44 * s, 44 * s);
+        addButtonHitBoxRect = BKCenterRect(addButtonHitBoxRect, CGPointMake(CGRectGetMaxX(hitBoxRect) + 22 * s, CGRectGetMidY(hitBoxRect)));
+        UIBezierPath *addButtonHitBoxPath = [UIBezierPath bezierPathWithRect:addButtonHitBoxRect];
+        self.selectedNodeAddButtonPath = addButtonHitBoxPath;
     }
     
     [[UIColor colorFromHexString:@"56cafc"] setFill];
     [[UIColor colorFromHexString:@"2F5AF9"] setStroke];
-    
+
     [shape fill];
     [shape stroke];
 
-    [name drawWithRect:textBounds options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
+    [name drawWithRect:textBounds options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
 
-    [self.nodeToPathMap setObject:shape forKey:node];
+    [self.nodeToDrawingPathMap setObject:shape forKey:node];
 }
 
-- (CGRect)visible
+- (BOOL)shouldDrawNode:(TCNode *)node
 {
-    CGRect visibleRect;
-    visibleRect.origin = self.scrollView.contentOffset;
-    visibleRect.size = self.scrollView.bounds.size;
+    CGSize textBoundsIdealSize = [node.name sizeWithAttributes:@{NSFontAttributeName : self.defaultFont}];
+    CGRect textBounds = (CGRect){CGPointZero, textBoundsIdealSize};
+    
+    CGRect base = BKCenterRect(BKScaleRect(textBounds, CGPointMake(1.5, 1.5)), node.drawingData.center);
+    CGRect visible = [self.scrollView visibleContentFrame];
 
-    float theScale = 1.0 / self.scrollView.zoomScale;
-    visibleRect.origin.x *= theScale;
-    visibleRect.origin.y *= theScale;
-    visibleRect.size.width *= theScale;
-    visibleRect.size.height *= theScale;
+    return CGRectIntersectsRect(visible, base);
+}
 
-    return visibleRect;
+- (BOOL)shouldDrawPathFromPoint:(CGPoint)p1 toPoint:(CGPoint)p2
+{
+    CGRect visible = [self.scrollView visibleContentFrame];
+
+    return CGRectContainsPoint(visible, p1) || CGRectContainsPoint(visible, p2);
 }
 
 - (void)drawRect:(CGRect)rect
 {
-    //CGRect visibleRect = [self visible];//[self.scrollView convertRect:self.scrollView.bounds toView:self];
-    
     CGContextRef context = UIGraphicsGetCurrentContext();
 
-    float s = 1.0 / self.scrollView.zoomScale;
-
+    TIMER_BEGIN
     [self.topNode traverse:^(TCNode *current) {
         if (current.parent) {
-            CGPoint p1 = BKScalePoint1D(CGPointFromString(current.drawingData.centerPointString), s);
-            CGPoint p2 = BKScalePoint1D(CGPointFromString(current.parent.drawingData.centerPointString), s);
+            CGPoint p1 = CGPointFromString(current.drawingData.centerPointString);
+            CGPoint p2 = CGPointFromString(current.parent.drawingData.centerPointString);
             UIBezierPath *path = [self pathBetweenPoint:p1 point:p2];
             [path stroke];
         }
     }];
 
     if (self.state == TCMindMapStateCreatingNewNode) {
-        UIBezierPath *path = [UIBezierPath bezierPath];
-        [path moveToPoint:self.selectedNode.drawingData.center];
-        [path addLineToPoint:self.newNodePathEndPoint];
-        /*
-        float dash[2] = {2,3};
-        CGContextSaveGState(context);
-        CGContextSetLineDash(context, 0, dash, 2);
-         */
-        [path stroke];
-        //CGContextRestoreGState(context);
+        [self drawPathForNodeCreationInContext:context];
     }
 
-    [self.topNode traverse:^(TCNode *current) {
-        UIBezierPath *path = [self.nodeToPathMap objectForKey:current];
-        //if (CGRectIntersectsRect(visibleRect, BKCenterRect(path.bounds, current.drawingData.center))) {
+    for (TCNode *current in self.topNode.allNodes) {
+        if ([self shouldDrawNode:current]) {
             [self drawNode:current inContext:context];
-        NSLog(@"coord: %@, visible: %@, offset %@", current.drawingData.centerPointString, NSStringFromCGRect([self visible]), NSStringFromCGPoint(self.scrollView.contentOffset));
-       // }
-    }];
-/*
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        debug = self.topNode.drawingData.center;
-    });
-
-    CGRect box = CGRectMake(0, 0, 300, 300);
-    box = BKCenterRect(box, debug);
-    UIBezierPath *boxPath = [UIBezierPath bezierPathWithRect:box];
-    [boxPath stroke];
- */
+        }
+    }
+    TIMER_LOG
 }
 
 @end

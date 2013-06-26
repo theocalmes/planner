@@ -24,5 +24,6 @@ typedef enum {
 
 - (void)userDidTouchViewAtPoint:(CGPoint)touchPoint;
 - (void)userDidMoveTouchInViewAtPoint:(CGPoint)touchPoint;
+- (void)userDidEndTouchInViewAtPoint:(CGPoint)touchPoint;
 
 @end

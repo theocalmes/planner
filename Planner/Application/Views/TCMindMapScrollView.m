@@ -45,10 +45,18 @@ static const float kMaximumZoomScale = 6.0;
         placeholder = [[UIView alloc] initWithFrame:self.mindMap.frame];
         [placeholder setBackgroundColor:[UIColor clearColor]];
 
+        [self addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
+
         [self addSubview:placeholder];
         //[self addSubview:self.mindMap];
     }
     return self;
+}
+
+static int cc = 0;
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    [self.mindMap setNeedsDisplay];
 }
 
 - (void)setTopNode:(TCNode *)topNode
@@ -69,8 +77,8 @@ static const float kMaximumZoomScale = 6.0;
         self.scrollEnabled = YES;
         return YES;
     }
-    CGPoint touchPoint = [gestureRecognizer locationInView:self.mindMap];
-    [self.mindMap userDidTouchViewAtPoint:touchPoint];
+    CGPoint touchPoint = [gestureRecognizer locationInView:self];
+    [self.mindMap userDidTouchViewAtPoint:BKScalePoint1D(touchPoint, self.maximumZoomScale / self.zoomScale)];
 
     if (self.mindMap.state == TCMindMapStateIdle) {
         return YES;
@@ -91,6 +99,35 @@ static const float kMaximumZoomScale = 6.0;
     return YES;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[touches allObjects] lastObject];
+    CGPoint touchPoint = [touch locationInView:self];
+
+    [self.mindMap userDidTouchViewAtPoint:BKScalePoint1D(touchPoint, self.maximumZoomScale / self.zoomScale)];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[touches allObjects] lastObject];
+    CGPoint touchPoint = [touch locationInView:self];
+
+    [self.mindMap userDidMoveTouchInViewAtPoint:BKScalePoint1D(touchPoint, self.maximumZoomScale / self.zoomScale)];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[touches allObjects] lastObject];
+    CGPoint touchPoint = [touch locationInView:self];
+    
+    [self.mindMap userDidEndTouchInViewAtPoint:BKScalePoint1D(touchPoint, self.maximumZoomScale / self.zoomScale)];
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    ALog(@"");
+}
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     [self.mindMap setNeedsDisplay];
@@ -99,6 +136,14 @@ static const float kMaximumZoomScale = 6.0;
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
     [self.mindMap setNeedsDisplay];
+}
+
+- (UIView *)fullMindMapSnapshot
+{
+    TCMindMap *imageMap = [[TCMindMap alloc] initWithFrame:CGRectMake(0, 0, self.zoomScale * self.frame.size.width, self.zoomScale * self.frame.size.height)];
+    imageMap.topNode = self.mindMap.topNode;
+
+    return [imageMap snapshot];
 }
 
 /*

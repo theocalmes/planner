@@ -59,6 +59,7 @@
 		E4DEFD34177661F500CF8A7E /* TCMindMap.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD33177661F500CF8A7E /* TCMindMap.m */; };
 		E4DEFD371776913A00CF8A7E /* TCMindMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD361776913A00CF8A7E /* TCMindMapViewController.m */; };
 		E4DEFD3D1777A35600CF8A7E /* TCMindMapScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD3C1777A35600CF8A7E /* TCMindMapScrollView.m */; };
+		E4DEFD631778928600CF8A7E /* UIScrollView+TCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DEFD621778928600CF8A7E /* UIScrollView+TCAdditions.m */; };
 		E7D097FCB63D4E649A7C97B6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B91BDB82014FF59726F92F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,8 @@
 		E4DEFD361776913A00CF8A7E /* TCMindMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMindMapViewController.m; path = "View Controller/TCMindMapViewController.m"; sourceTree = "<group>"; };
 		E4DEFD3B1777A35600CF8A7E /* TCMindMapScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMindMapScrollView.h; sourceTree = "<group>"; };
 		E4DEFD3C1777A35600CF8A7E /* TCMindMapScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMindMapScrollView.m; sourceTree = "<group>"; };
+		E4DEFD611778928600CF8A7E /* UIScrollView+TCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TCAdditions.h"; sourceTree = "<group>"; };
+		E4DEFD621778928600CF8A7E /* UIScrollView+TCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TCAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +293,8 @@
 				E44047FA176F808600E51384 /* NSDate+TCAdditions.m */,
 				E4C19C9417743A4600E56BEF /* UIStoryboard+TCStoryBoard.h */,
 				E4C19C9517743A4600E56BEF /* UIStoryboard+TCStoryBoard.m */,
+				E4DEFD611778928600CF8A7E /* UIScrollView+TCAdditions.h */,
+				E4DEFD621778928600CF8A7E /* UIScrollView+TCAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				E4DEFD2E1774FC7B00CF8A7E /* TCPhysicsGraph.m in Sources */,
 				E428062C176F7D9200B498E5 /* main.m in Sources */,
 				E4DEFD371776913A00CF8A7E /* TCMindMapViewController.m in Sources */,
+				E4DEFD631778928600CF8A7E /* UIScrollView+TCAdditions.m in Sources */,
 				E4280630176F7D9200B498E5 /* TCAppDelegate.m in Sources */,
 				E4C19C93177438C600E56BEF /* TCGraphViewController.m in Sources */,
 				E4DEFD34177661F500CF8A7E /* TCMindMap.m in Sources */,

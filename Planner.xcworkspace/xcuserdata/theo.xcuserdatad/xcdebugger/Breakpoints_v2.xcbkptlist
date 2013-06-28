@@ -130,12 +130,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Planner/Application/Views/TCMindMap.m"
-            timestampString = "393899001.485239"
+            timestampString = "394097147.132395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
-            landmarkName = "-drawRect:"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
+            landmarkName = "-shouldDrawNode:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

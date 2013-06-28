@@ -38,7 +38,7 @@ static const float kMaximumZoomScale = 6.0;
         CGPoint start = BKCenterRect(frame, BKRectCenter(contentFrame)).origin;
         self.contentOffset = start;
 
-        self.mindMap = [[TCMindMap alloc] initWithFrame:contentFrame];
+        self.mindMap = [[TCMindMap alloc] initWithSize:self.contentSize];
         self.mindMap.backgroundColor = [UIColor whiteColor];
         self.mindMap.scrollView = self;
 
@@ -56,14 +56,14 @@ static const float kMaximumZoomScale = 6.0;
 static int cc = 0;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    [self.mindMap setNeedsDisplay];
+    //[self.mindMap setNeedsDisplay];
 }
 
 - (void)setTopNode:(TCNode *)topNode
 {
     _topNode = topNode;
     self.mindMap.topNode = topNode;
-    self.contentOffset = BKSubPoints(topNode.drawingData.center, CGPointMake(50, 50));
+    self.contentOffset = BKAddPoints(topNode.drawingData.center, CGPointMake(200, 200));
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -130,20 +130,12 @@ static int cc = 0;
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    [self.mindMap setNeedsDisplay];
+    //[self.mindMap setNeedsDisplay];
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    [self.mindMap setNeedsDisplay];
-}
-
-- (UIView *)fullMindMapSnapshot
-{
-    TCMindMap *imageMap = [[TCMindMap alloc] initWithFrame:CGRectMake(0, 0, self.zoomScale * self.frame.size.width, self.zoomScale * self.frame.size.height)];
-    imageMap.topNode = self.mindMap.topNode;
-
-    return [imageMap snapshot];
+   // [self.mindMap setNeedsDisplay];
 }
 
 /*

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
 
 typedef enum {
     TCMindMapStateIdle,
@@ -15,7 +16,7 @@ typedef enum {
     TCMindMapStateCreatedNewNode
 } TCMindMapState;
 
-@interface TCMindMap : UIView
+@interface TCMindMap : SKScene
 
 @property (strong, nonatomic) TCNode *topNode;
 @property (assign, nonatomic) TCMindMapState state;

@@ -29,8 +29,6 @@
     [super viewDidLoad];
     TCMindMapScrollView *scrollView = [[TCMindMapScrollView alloc] initWithFrame:self.view.bounds];
     [scrollView setZoomScale:6.0 animated:YES];
-    
-    
 
   //  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([TCNode class])];
     //[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"parent = nil"]];
@@ -40,12 +38,17 @@
  */
     TCNode *top = [TCNode createNewUsingMainContextQueue:YES];
     top.name = @"Develop App";
-    CGPoint center = CGPointMake(scrollView.mindMap.bounds.size.width * 6.0 /2.0, scrollView.mindMap.bounds.size.height * 6.0 /2.0);
+    CGPoint center = CGPointMake(scrollView.mindMap.size.width * 6.0 /2.0, scrollView.mindMap.size.height * 6.0 /2.0);
     top.drawingData.centerPointString = NSStringFromCGPoint(center);
 
     scrollView.topNode = top;
 
-    [self.view addSubview:scrollView.mindMap];
+    SKView *gameView = [[SKView alloc] initWithFrame:scrollView.frame];
+    [gameView presentScene:scrollView.mindMap];
+
+    [self.view addSubview:gameView];
+
+    //[self.view addSubview:scrollView.mindMap];
     [self.view addSubview:scrollView];
 }
 - (void)didReceiveMemoryWarning

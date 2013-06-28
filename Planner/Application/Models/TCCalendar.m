@@ -7,10 +7,11 @@
 //
 
 #import "TCCalendar.h"
+#import "TCSchedule.h"
 #import "NSDate+TCAdditions.h"
 
 @interface TCCalendar ()
-@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic, readwrite) NSDateFormatter *dateFormatter;
 @end
 
 @implementation TCCalendar
@@ -24,40 +25,6 @@
     }
 
     return _dateFormatter;
-}
-
-- (NSInteger)streakCount
-{
-    NSMutableSet *completionDateSet = [[NSMutableSet alloc] init];
-    for (NSDate *date in self.completionDates) {
-        [completionDateSet addObject:[self.dateFormatter stringFromDate:date]];
-    }
-
-    NSInteger streak = 0;
-
-    NSDate *date = self.habit.creationDate;
-    NSDate *endDate = self.completionDates.lastObject;
-    while ([date isBeforeDate:endDate]) {
-        NSString *dateString = [self.dateFormatter stringFromDate:date];
-        
-        if ([self.scheduler isDueOnDate:date]) {
-            if ([completionDateSet containsObject:dateString]) {
-                streak++;
-            }
-            else {
-                if (streak > 0) {
-                    streak = 0;
-                }
-                else {
-                    streak--;
-                }
-            }
-        }
-
-        date = [date dateThatIsNumberOfDaysAway:1];
-    }
-
-    return streak;
 }
 
 @end

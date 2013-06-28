@@ -23,6 +23,7 @@
 - (NSDate *)midnight;
 
 - (NSInteger)weekday;
+- (NSInteger)weekNumber;
 
 - (NSDateComponents *)dateComponents;
 
@@ -30,5 +31,7 @@
 - (BOOL)isToday;
 - (BOOL)isBeforeDate:(NSDate *)date;
 - (BOOL)isAfterDate:(NSDate *)date;
+
+- (BOOL)isBetweenDate:(NSDate *)low andDate:(NSDate *)high;
 
 @end

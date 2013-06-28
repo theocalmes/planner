@@ -36,6 +36,12 @@
     return [comps weekday];
 }
 
+- (NSInteger)weekNumber
+{
+    NSDateComponents *comps = [[NSCalendar autoupdatingCurrentCalendar] components:NSWeekCalendarUnit fromDate:self];
+    return [comps week];
+}
+
 - (BOOL)isToday
 {
     if ([self compare:[NSDate yesterday]] == NSOrderedDescending && [self compare:[NSDate tomorrow]] == NSOrderedAscending)
@@ -58,6 +64,14 @@
         return YES;
 
     return NO;
+}
+
+- (BOOL)isBetweenDate:(NSDate *)low andDate:(NSDate *)high
+{
+    NSInteger lowOrder = [self compare:low];
+    NSInteger highOrder = [self compare:high];
+
+    return (lowOrder == NSOrderedSame || lowOrder == NSOrderedDescending) && (highOrder == NSOrderedSame || highOrder == NSOrderedAscending);
 }
 
 + (NSDate *)dateThatIsNumberOfDaysFromToday:(NSInteger)numberOfDays

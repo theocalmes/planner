@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TCSchedulable.h"
+
+@class TCSchedule;
 
 @interface TCCalendar : NSObject
 
 @property (strong, nonatomic) NSMutableArray *completionDates;
+@property (strong, nonatomic, readonly) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) TCHabit *habit;
-@property (strong, nonatomic) id <TCSchedulable> scheduler;
+@property (strong, nonatomic) TCSchedule *schedule;
 
 - (NSInteger)streakCount;
 - (float)completionRatio;

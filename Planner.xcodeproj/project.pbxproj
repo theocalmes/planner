@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6649BE139A6444F09FEE5A89 /* libPods-PlannerIntegrationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F83601D464480C96BED4DF /* libPods-PlannerIntegrationTests.a */; };
 		E42040EB177DF1070059CDC8 /* TCMindMapNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E42040EA177DF1070059CDC8 /* TCMindMapNode.m */; };
+		E42040EE177E2AD50059CDC8 /* TCSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E42040ED177E2AD50059CDC8 /* TCSchedule.m */; };
+		E42040F1177E36050059CDC8 /* NSArray+TCFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = E42040F0177E36050059CDC8 /* NSArray+TCFunctional.m */; };
 		E426F3BF177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
 		E426F3C0177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
 		E426F3C1177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
@@ -82,6 +84,10 @@
 		DC5096079314411D9160EB5C /* Pods-PlannerIntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerIntegrationTests.xcconfig"; path = "Pods/Pods-PlannerIntegrationTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		E42040E9177DF1070059CDC8 /* TCMindMapNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMindMapNode.h; path = "Sprite Kit Nodes/TCMindMapNode.h"; sourceTree = "<group>"; };
 		E42040EA177DF1070059CDC8 /* TCMindMapNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMindMapNode.m; path = "Sprite Kit Nodes/TCMindMapNode.m"; sourceTree = "<group>"; };
+		E42040EC177E2AD50059CDC8 /* TCSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCSchedule.h; sourceTree = "<group>"; };
+		E42040ED177E2AD50059CDC8 /* TCSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSchedule.m; sourceTree = "<group>"; };
+		E42040EF177E36050059CDC8 /* NSArray+TCFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+TCFunctional.h"; sourceTree = "<group>"; };
+		E42040F0177E36050059CDC8 /* NSArray+TCFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+TCFunctional.m"; sourceTree = "<group>"; };
 		E426F3BD177146C7001EA3BA /* TCNonSpecificDaysSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCNonSpecificDaysSchedule.h; sourceTree = "<group>"; };
 		E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCNonSpecificDaysSchedule.m; sourceTree = "<group>"; };
 		E426F3C21772154C001EA3BA /* TCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCalendar.h; sourceTree = "<group>"; };
@@ -312,6 +318,8 @@
 				E4C19C9517743A4600E56BEF /* UIStoryboard+TCStoryBoard.m */,
 				E4DEFD611778928600CF8A7E /* UIScrollView+TCAdditions.h */,
 				E4DEFD621778928600CF8A7E /* UIScrollView+TCAdditions.m */,
+				E42040EF177E36050059CDC8 /* NSArray+TCFunctional.h */,
+				E42040F0177E36050059CDC8 /* NSArray+TCFunctional.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -350,6 +358,8 @@
 				E426F3C31772154C001EA3BA /* TCCalendar.m */,
 				E4DEFD2C1774FC7B00CF8A7E /* TCPhysicsGraph.h */,
 				E4DEFD2D1774FC7B00CF8A7E /* TCPhysicsGraph.m */,
+				E42040EC177E2AD50059CDC8 /* TCSchedule.h */,
+				E42040ED177E2AD50059CDC8 /* TCSchedule.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -575,10 +585,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E426F3C41772154C001EA3BA /* TCCalendar.m in Sources */,
+				E42040EE177E2AD50059CDC8 /* TCSchedule.m in Sources */,
 				E4280654176F7FE200B498E5 /* Planner.xcdatamodeld in Sources */,
 				E4C19C9617743A4600E56BEF /* UIStoryboard+TCStoryBoard.m in Sources */,
 				E4DEFD2E1774FC7B00CF8A7E /* TCPhysicsGraph.m in Sources */,
 				E428062C176F7D9200B498E5 /* main.m in Sources */,
+				E42040F1177E36050059CDC8 /* NSArray+TCFunctional.m in Sources */,
 				E4DEFD371776913A00CF8A7E /* TCMindMapViewController.m in Sources */,
 				E4DEFD631778928600CF8A7E /* UIScrollView+TCAdditions.m in Sources */,
 				E4280630176F7D9200B498E5 /* TCAppDelegate.m in Sources */,
@@ -734,8 +746,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Planner/Planner-Prefix.pch";
 				INFOPLIST_FILE = "Planner/Planner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -749,8 +762,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Planner/Planner-Prefix.pch";
 				INFOPLIST_FILE = "Planner/Planner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

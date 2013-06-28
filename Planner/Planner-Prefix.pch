@@ -21,6 +21,7 @@
 // Categories
 #import "NSFileManager+AppLibrary.h"
 #import "NSManagedObject+ObjectCreation.h"
+#import "NSArray+TCFunctional.h"
 #import "UIView+frame.h"
 #import "UIScrollView+TCAdditions.h"
 

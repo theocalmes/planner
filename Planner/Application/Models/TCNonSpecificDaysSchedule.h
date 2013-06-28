@@ -6,12 +6,10 @@
 //  Copyright (c) 2013 theo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "TCSchedulable.h"
+#import "TCSchedule.h"
 
-@interface TCNonSpecificDaysSchedule : NSObject <TCSchedulable>
+@interface TCNonSpecificDaysSchedule : TCSchedule
 
-@property (strong, nonatomic) NSArray *allCompletionDates;
 @property (assign, nonatomic) NSInteger daysPerWeek;
 
 @end

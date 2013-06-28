@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 theo. All rights reserved.
 //
 
-#import "TCSchedulable.h"
+#import "TCSchedule.h"
 
-typedef enum : uint8_t {
+typedef enum {
     TCWeekDaySunday = 1 << 1,
     TCWeekDayMonday = 1 << 2,
     TCWeekDayTuesday = 1 << 3,
@@ -18,6 +18,6 @@ typedef enum : uint8_t {
     TCWeekDaySaturday = 1 << 7
 } TCWeekDays;
 
-@interface TCSpecificDaysSchedule : NSObject <TCSchedulable>
+@interface TCSpecificDaysSchedule : TCSchedule
 @property (assign, nonatomic) TCWeekDays weekDays;
 @end

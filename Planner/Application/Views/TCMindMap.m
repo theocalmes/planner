@@ -12,6 +12,8 @@
 #import "TCDrawingData.h"
 #import "UIColor+Serialization.h"
 
+#import "TCMindMapNode.h"
+
 float d(CGPoint a, CGPoint b)
 {
     return sqrtf(powf(a.x - b.x, 2) + powf(a.y - b.y, 2));
@@ -28,6 +30,8 @@ float d(CGPoint a, CGPoint b)
 @property (strong, nonatomic) UIFont *defaultFont;
 @property (strong, nonatomic) NSMutableArray *paths;
 @property (strong, nonatomic) SKShapeNode *tempNode;
+
+@property (strong, nonatomic) NSMapTable *nodeMap;
 @end
 
 @implementation TCMindMap
@@ -43,6 +47,7 @@ float d(CGPoint a, CGPoint b)
         _nodeToHitBoxPathMap = [NSMapTable strongToStrongObjectsMapTable];
         _nodeToDrawingPathMap = [NSMapTable strongToStrongObjectsMapTable];
         _nodeToShapeNodeMap = [NSMapTable strongToStrongObjectsMapTable];
+        _nodeMap = [NSMapTable strongToStrongObjectsMapTable];
         _state = TCMindMapStateIdle;
         _defaultFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         _paths = [NSMutableArray array];
@@ -59,7 +64,17 @@ float d(CGPoint a, CGPoint b)
 - (void)setTopNode:(TCNode *)topNode
 {
     _topNode = topNode;
-    [self addChild:[self nodeFromNode:_topNode]];
+    [_topNode traverse:^(TCNode *current) {
+        [self addNode:current];
+    }];
+}
+
+- (void)addNode:(TCNode *)node
+{
+    TCMindMapNode *mapNode = [[TCMindMapNode alloc] initWithNode:node];
+    [self.nodeMap setObject:mapNode forKey:node];
+
+    [self addChild:mapNode];
 }
 
 - (TCNode *)nodeForPoint:(CGPoint)point
@@ -67,7 +82,7 @@ float d(CGPoint a, CGPoint b)
     CGPoint touchPoint = [self adjustedPointForPoint:point];
     __block TCNode *node = nil;
     [self.topNode traverse:^(TCNode *current) {
-        SKShapeNode *shapeNode = [self.nodeToDrawingPathMap objectForKey:current];
+        TCMindMapNode *shapeNode = [self.nodeMap objectForKey:current];
         if ([shapeNode containsPoint:touchPoint]) {
             node = current;
         }
@@ -79,10 +94,9 @@ float d(CGPoint a, CGPoint b)
 - (BOOL)didHitAddButtonAtPoint:(CGPoint)point
 {
     CGPoint touchPoint = [self adjustedPointForPoint:point];
-    SKShapeNode *addButton = [self.nodeToHitBoxPathMap objectForKey:self.selectedNode];
-    CGPoint relativePoint = [[self.nodeToShapeNodeMap objectForKey:self.selectedNode] convertPoint:touchPoint fromNode:self];
-
-    return [addButton containsPoint:relativePoint];
+    TCMindMapNode *selected = [self.nodeMap objectForKey:self.selectedNode];
+    
+    return [selected didHitAddButtonAtPoint:touchPoint];
 }
 
 - (void)setScrollView:(UIScrollView *)scrollView
@@ -173,8 +187,8 @@ float d(CGPoint a, CGPoint b)
             newNode.name = [NSString stringWithFormat:@"New node: %d", arc4random() % 500];
 
             self.state = TCMindMapStateNodeSelected;
+            [self addNode:newNode];
             self.selectedNode = newNode;
-            [self addChild:[self nodeFromNode:newNode]];
 
             SKShapeNode *path = [self pathNodeBetweenNode:newNode node:newNode.parent];
             [self.paths addObject:path];
@@ -233,46 +247,6 @@ float d(CGPoint a, CGPoint b)
     CGContextRestoreGState(context);
 }
 
-- (SKNode *)nodeFromNode:(TCNode *)node
-{
-    NSString *name = node.name;
-    
-    UIFont *font = [self.defaultFont fontWithSize:(self.defaultFont.pointSize)];
-
-    CGSize textBoundsIdealSize = [name sizeWithAttributes:@{NSFontAttributeName : font}];
-    CGRect textBounds = (CGRect){CGPointZero, textBoundsIdealSize};
-
-    CGRect shapeBase = BKScaleRect1D(textBounds, 1.3);
-    shapeBase.origin = CGPointZero;
-    UIBezierPath *shape = [UIBezierPath bezierPathWithRoundedRect:shapeBase cornerRadius:2.5];
-
-    SKShapeNode *shapeNode = [SKShapeNode node];
-    shapeNode.zPosition = -100;
-    shapeNode.lineWidth = 0.0;
-    shapeNode.path = shape.CGPath;
-    shapeNode.fillColor = [UIColor colorFromHexString:@"56cafc"];
-
-    SKLabelNode *labelNode = [SKLabelNode node];
-    labelNode.text = node.name;
-    labelNode.position = BKSubPoints(BKRectCenter(shapeBase), CGPointMake(0, 0.45 * font.pointSize));
-    labelNode.fontName = [font fontName];
-    labelNode.fontSize = [font pointSize];
-    [shapeNode addChild:labelNode];
-
-    SKShapeNode *addButton = [SKShapeNode node];
-    addButton.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 20, 20)].CGPath;
-    addButton.fillColor = [UIColor blueColor];
-    addButton.position = CGPointMake(CGRectGetMaxX(labelNode.frame) + 15, CGRectGetMidY(shapeNode.frame) - 10);
-    addButton.hidden = YES;
-    [shapeNode addChild:addButton];
-
-    [self.nodeToHitBoxPathMap setObject:addButton forKey:node];
-    [self.nodeToShapeNodeMap setObject:shapeNode forKey:node];
-    [self.nodeToDrawingPathMap setObject:shapeNode forKey:node];
-
-    return shapeNode;
-}
-
 - (SKShapeNode *)pathNodeBetweenNode:(TCNode *)node1 node:(TCNode *)node2
 {
     SKShapeNode *path = [SKShapeNode node];
@@ -313,22 +287,11 @@ float d(CGPoint a, CGPoint b)
 - (void)update:(NSTimeInterval)currentTime
 {
     for (TCNode *current in self.topNode.allNodes) {
-        SKShapeNode *node = [self.nodeToDrawingPathMap objectForKey:current];
-        CGPoint center = [self adjustedPointForPoint:current.drawingData.center];
-        node.position = BKSubPoints(center, CGPointMake(node.frame.size.width / 2.0, node.frame.size.height / 2.0));
-        node.xScale = self.scrollView.zoomScale * scale;
-        node.yScale = self.scrollView.zoomScale * scale;
-
-        if ([current isEqual:self.selectedNode]) {
-            SKShapeNode *shape = [self.nodeToShapeNodeMap objectForKey:current];
-            [shape setFillColor:[UIColor greenColor]];
-            [(SKShapeNode *)[self.nodeToHitBoxPathMap objectForKey:current] setHidden:NO];
-        }
-        else {
-            SKShapeNode *shape = [self.nodeToShapeNodeMap objectForKey:current];
-            [shape setFillColor:[UIColor colorFromHexString:@"56cafc"]];
-            [(SKShapeNode *)[self.nodeToHitBoxPathMap objectForKey:current] setHidden:YES];
-        }
+        
+        TCMindMapNode *node = [self.nodeMap objectForKey:current];
+        node.selected = [current isEqual:self.selectedNode];
+        
+        [node updateNodeWithOffset:self.scrollView.contentOffset scale:self.scrollView.zoomScale * scale];
     }
 
     for (SKShapeNode *path in self.paths) {

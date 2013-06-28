@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6649BE139A6444F09FEE5A89 /* libPods-PlannerIntegrationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F83601D464480C96BED4DF /* libPods-PlannerIntegrationTests.a */; };
+		E42040EB177DF1070059CDC8 /* TCMindMapNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E42040EA177DF1070059CDC8 /* TCMindMapNode.m */; };
 		E426F3BF177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
 		E426F3C0177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
 		E426F3C1177146C7001EA3BA /* TCNonSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */; };
@@ -79,6 +80,8 @@
 		9B93D18284AC43D3B46A84A4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		A5F83601D464480C96BED4DF /* libPods-PlannerIntegrationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlannerIntegrationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5096079314411D9160EB5C /* Pods-PlannerIntegrationTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerIntegrationTests.xcconfig"; path = "Pods/Pods-PlannerIntegrationTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		E42040E9177DF1070059CDC8 /* TCMindMapNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCMindMapNode.h; path = "Sprite Kit Nodes/TCMindMapNode.h"; sourceTree = "<group>"; };
+		E42040EA177DF1070059CDC8 /* TCMindMapNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCMindMapNode.m; path = "Sprite Kit Nodes/TCMindMapNode.m"; sourceTree = "<group>"; };
 		E426F3BD177146C7001EA3BA /* TCNonSpecificDaysSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCNonSpecificDaysSchedule.h; sourceTree = "<group>"; };
 		E426F3BE177146C7001EA3BA /* TCNonSpecificDaysSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCNonSpecificDaysSchedule.m; sourceTree = "<group>"; };
 		E426F3C21772154C001EA3BA /* TCCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCCalendar.h; sourceTree = "<group>"; };
@@ -190,6 +193,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E42040E8177D75080059CDC8 /* Sprite Kit Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				E42040E9177DF1070059CDC8 /* TCMindMapNode.h */,
+				E42040EA177DF1070059CDC8 /* TCMindMapNode.m */,
+			);
+			name = "Sprite Kit Nodes";
+			sourceTree = "<group>";
+		};
 		E4280611176F7D9200B498E5 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +287,7 @@
 		E48E518D176F7F420079B482 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				E42040E8177D75080059CDC8 /* Sprite Kit Nodes */,
 				E4C19C901774389800E56BEF /* View Controllers */,
 				E4CAE35D1770AFED00B2C892 /* Protocols */,
 				E48E518E176F7F420079B482 /* Categories */,
@@ -576,6 +589,7 @@
 				E48E51AC176F7F420079B482 /* TCCoreDataStore.m in Sources */,
 				E48E51AD176F7F420079B482 /* TCGraph.m in Sources */,
 				E48E51AE176F7F420079B482 /* TCHabit.m in Sources */,
+				E42040EB177DF1070059CDC8 /* TCMindMapNode.m in Sources */,
 				E48E51AF176F7F420079B482 /* TCHabitTask.m in Sources */,
 				E48E51B0176F7F420079B482 /* TCNode.m in Sources */,
 				E48E51B2176F7F420079B482 /* TCSpecificDaysSchedule.m in Sources */,

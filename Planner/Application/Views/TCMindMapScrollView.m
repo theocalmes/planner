@@ -10,7 +10,7 @@
 #import "TCMindMap.h"
 
 static const float kMinimumZoomScale = 1.0;
-static const float kMaximumZoomScale = 6.0;
+static const float kMaximumZoomScale = 5.0;
 
 @interface TCMindMapScrollView () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 @end
@@ -25,7 +25,6 @@ static const float kMaximumZoomScale = 6.0;
     self = [super initWithFrame:frame];
     if (self) {
         
-        CGSize viewSize = frame.size;
         CGRect contentFrame = self.bounds;
         self.contentSize = contentFrame.size;
         self.delegate = self;
@@ -45,18 +44,9 @@ static const float kMaximumZoomScale = 6.0;
         placeholder = [[UIView alloc] initWithFrame:self.mindMap.frame];
         [placeholder setBackgroundColor:[UIColor clearColor]];
 
-        [self addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
-
         [self addSubview:placeholder];
-        //[self addSubview:self.mindMap];
     }
     return self;
-}
-
-static int cc = 0;
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    //[self.mindMap setNeedsDisplay];
 }
 
 - (void)setTopNode:(TCNode *)topNode
@@ -122,29 +112,5 @@ static int cc = 0;
     
     [self.mindMap userDidEndTouchInViewAtPoint:BKScalePoint1D(touchPoint, self.maximumZoomScale / self.zoomScale)];
 }
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    ALog(@"");
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    //[self.mindMap setNeedsDisplay];
-}
-
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView
-{
-   // [self.mindMap setNeedsDisplay];
-}
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

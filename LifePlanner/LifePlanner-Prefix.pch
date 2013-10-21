@@ -12,4 +12,19 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+
+    // Controllers
+    #import "TCCoreDataStore.h"
+
+    // Categories
+    #import "NSFileManager+AppLibrary.h"
+    #import "NSManagedObject+ObjectCreation.h"
+
+    // CoreData models
+    #import "TCNode.h"
+    #import "TCTask.h"
+    #import "TCTaskValidation.h"
+    #import "TCHabit.h"
+    #import "TCHabitTask.h"
+
 #endif

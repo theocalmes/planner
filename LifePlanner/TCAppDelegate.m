@@ -8,11 +8,21 @@
 
 #import "TCAppDelegate.h"
 
-@implementation TCAppDelegate
+#import "TCNode.h"
+#import "TCTask.h"
+#import "TCTaskValidation.h"
+#import "TCHabit.h"
+#import "TCHabitTask.h"
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+#import "TCGraph.h"
+
+#import "TCGraphView.h"
+
+@implementation TCAppDelegate
+{
+    TCGraphView *gv;
+    NSTimer *timer;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,130 +30,153 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+
+    TCNode *projectNode = [TCNode createNewUsingMainContextQueue:YES];
+    projectNode.name = @"Get Fit";
+
+    TCTaskValidation *lose5lb = [TCTaskValidation createNewUsingMainContextQueue:YES];
+    lose5lb.name = @"lose 5 lb";
+    lose5lb.parent = projectNode;
+
+    TCTaskValidation *lose10lb = [TCTaskValidation createNewUsingMainContextQueue:YES];
+    lose10lb.name = @"lose 10 lb";
+    lose10lb.parent = projectNode;
+
+    TCNode *runningNode = [TCNode createNewUsingMainContextQueue:YES];
+    runningNode.name = @"Running";
+    runningNode.parent = projectNode;
+
+    TCTask *getShoesTask = [TCTask createNewUsingMainContextQueue:YES];
+    getShoesTask.name = @"Buy running shoes";
+    getShoesTask.parent = runningNode;
+
+    TCTask *checkAmazonForShoes = [TCTask createNewUsingMainContextQueue:YES];
+    checkAmazonForShoes.name = @"Check Amazon";
+    checkAmazonForShoes.parent = getShoesTask;
+
+    TCTask *subAMazon = [TCTask createNewUsingMainContextQueue:YES];
+    subAMazon.name = @"Sub Amazon";
+    subAMazon.parent = checkAmazonForShoes;
+
+    TCTask *checkFootLockerForShoes = [TCTask createNewUsingMainContextQueue:YES];
+    checkFootLockerForShoes.name = @"Check foot locker";
+    checkFootLockerForShoes.parent = getShoesTask;
+
+    TCHabitTask *finishShoesTask = [TCHabitTask createNewUsingMainContextQueue:YES];
+    finishShoesTask.name = @"Check one store a day";
+    finishShoesTask.task = getShoesTask;
+    finishShoesTask.parent = getShoesTask;
+
+    TCHabit *runAroundTheBlock = [TCHabit createNewUsingMainContextQueue:YES];
+    runAroundTheBlock.name = @"Run around the block every day";
+    runAroundTheBlock.parent = runningNode;
+
+    TCTaskValidation *run1mile = [TCTaskValidation createNewUsingMainContextQueue:YES];
+    run1mile.name = @"Be able to run 1 mile";
+    run1mile.parent = runningNode;
+    
+    TCTaskValidation *run5mile = [TCTaskValidation createNewUsingMainContextQueue:YES];
+    run5mile.name = @"Be able to run 5 mile";
+    run5mile.parent = runningNode;
+
+    TCNode *gymNode = [TCNode createNewUsingMainContextQueue:YES];
+    gymNode.name = @"Gym";
+    gymNode.parent = projectNode;
+
+    TCHabit *lowerBodyOnWed = [TCHabit createNewUsingMainContextQueue:YES];
+    lowerBodyOnWed.name = @"Workout legs on wed";
+    lowerBodyOnWed.parent = gymNode;
+
+    TCHabit *upperBodyOnWed = [TCHabit createNewUsingMainContextQueue:YES];
+    upperBodyOnWed.name = @"Workout arms on thursday";
+    upperBodyOnWed.parent = gymNode;
+
+    TCTask *buyWeights = [TCTask createNewUsingMainContextQueue:YES];
+    buyWeights.name = @"Buy weights";
+    buyWeights.parent = gymNode;
+
+    TCTask *research = [TCTask createNewUsingMainContextQueue:YES];
+    research.name = @"Research";
+    research.parent = gymNode;
+
+    TCTask *readAboutRoutine = [TCTask createNewUsingMainContextQueue:YES];
+    readAboutRoutine.name = @"Read about routine";
+    readAboutRoutine.parent = research;
+
+    TCTask *readAboutProtien = [TCTask createNewUsingMainContextQueue:YES];
+    readAboutProtien.name = @"readAboutProtien";
+    readAboutProtien.parent = research;
+
+    TCTaskValidation *bench10 = [TCTaskValidation createNewUsingMainContextQueue:YES];
+    bench10.name = @"Bench 100 lb";
+    bench10.parent = gymNode;
+
+    TCTaskValidation *pushups = [TCTaskValidation createNewUsingMainContextQueue:YES];
+    pushups.name = @"Do 50 pushups";
+    pushups.parent = gymNode;
+
+    TCTaskValidation *situps = [TCTaskValidation createNewUsingMainContextQueue:YES];
+    situps.name = @"Do 50 situps";
+    situps.parent = gymNode;
+
+    [[TCCoreDataStore mainQueueContext] save:nil];
+
+    UIButton *go = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [go setTitle:@"Go" forState:UIControlStateNormal];
+    [go setFrame:CGRectMake(0, 0, 50, 50)];
+    go.center = CGPointMake(320/2, 450);
+    [self.window addSubview:go];
+
+    [go addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
+- (void)start:(id)obj
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
+    [timer invalidate];
+    [gv removeFromSuperview];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:NSStringFromClass([TCNode class])];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"parent = nil"]];
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
+    NSArray *results = [[TCCoreDataStore mainQueueContext] executeFetchRequest:fetchRequest error:nil];
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
+    TCNode *top = [results lastObject];
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
-}
+    CGRect frame = CGRectMake(0, 0, 320, 400);
+    gv = [[TCGraphView alloc] initWithFrame:frame node:top];
+    gv.center = CGPointMake(320/2.0, 200+20);
 
-- (void)saveContext
-{
-    NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        } 
-    }
-}
-
-#pragma mark - Core Data stack
-
-// Returns the managed object context for the application.
-// If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
-- (NSManagedObjectContext *)managedObjectContext
-{
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
-    }
+    [self.window addSubview:gv];
     
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    return _managedObjectContext;
+    [self performSelector:@selector(begin) withObject:nil afterDelay:0.8];
 }
 
-// Returns the managed object model for the application.
-// If the model doesn't already exist, it is created from the application's model.
-- (NSManagedObjectModel *)managedObjectModel
+- (void)begin
 {
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"LifePlanner" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:gv selector:@selector(calculate) userInfo:nil repeats:YES];
 }
 
-// Returns the persistent store coordinator for the application.
-// If the coordinator doesn't already exist, it is created and the application's store added to it.
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+- (void)traverseNode:(TCNode *)node withBlock:(void(^)(TCNode *))block
 {
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
+    block(node);
+    for (TCNode *child in node.children) {
+        [self traverseNode:child withBlock:block];
     }
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"LifePlanner.sqlite"];
-    
-    NSError *error = nil;
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }    
-    
-    return _persistentStoreCoordinator;
 }
 
-#pragma mark - Application's Documents directory
-
-// Returns the URL to the application's Documents directory.
-- (NSURL *)applicationDocumentsDirectory
+- (NSSet *)allLeavesForNode:(TCNode *)node
 {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSMutableSet *leaves = [NSMutableSet new];
+    [node traverse:^(TCNode *current) {
+        if (current.children.count == 0) {
+            [leaves addObject:current];
+            NSLog(@"Name = %@, Depth = %d", current.name, [current depth]);
+        }
+    }];
+
+    return leaves.copy;
 }
 
 @end

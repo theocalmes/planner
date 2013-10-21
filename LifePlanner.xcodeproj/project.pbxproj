@@ -8,8 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		06EAF0C3959D410D85B832FD /* libPods-LifePlannerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E75DF2EB23A4602ADBCD4D7 /* libPods-LifePlannerTests.a */; };
-		13F2290A1A554A2084D1FA1C /* libPods-LifePlannerUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7C7879AEEC45A39F8AA856 /* libPods-LifePlannerUnitTests.a */; };
 		B31AA1D5E89941F9B8D423ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B20F344AC46430E99E02AE3 /* libPods.a */; };
+		E42605111762682500D2F557 /* TCCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E42605101762682500D2F557 /* TCCoreDataStore.m */; };
+		E42605721764E62100D2F557 /* NSFileManager+AppLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = E42605711764E62100D2F557 /* NSFileManager+AppLibrary.m */; };
+		E42605761764E77400D2F557 /* TCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E42605751764E77400D2F557 /* TCNode.m */; };
+		E42605791764E79300D2F557 /* TCHabit.m in Sources */ = {isa = PBXBuildFile; fileRef = E42605781764E79300D2F557 /* TCHabit.m */; };
+		E426057C1764E7C900D2F557 /* TCHabitTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E426057B1764E7C800D2F557 /* TCHabitTask.m */; };
+		E426057F1764E7F600D2F557 /* TCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E426057E1764E7F600D2F557 /* TCTask.m */; };
+		E42605821764E80C00D2F557 /* TCTaskValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = E42605811764E80B00D2F557 /* TCTaskValidation.m */; };
+		E42605881764EC5700D2F557 /* NSManagedObject+ObjectCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = E42605871764EC5700D2F557 /* NSManagedObject+ObjectCreation.m */; };
+		E426058C1765007900D2F557 /* TCGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = E426058B1765007900D2F557 /* TCGraphView.m */; };
+		E426058F1765050B00D2F557 /* TCGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = E426058E1765050A00D2F557 /* TCGraph.m */; };
+		E4280609176F784900B498E5 /* TCSpecificDaysScheduleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E4280607176F784900B498E5 /* TCSpecificDaysScheduleSpec.m */; };
+		E428060E176F7B0100B498E5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E428060D176F7B0100B498E5 /* XCTest.framework */; };
+		E46AAD0F176E59B40031EDD6 /* TCSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E46AAD0E176E59B40031EDD6 /* TCSchedule.m */; };
+		E46AAD12176E5C210031EDD6 /* TCSpecificDaysSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = E46AAD11176E5C210031EDD6 /* TCSpecificDaysSchedule.m */; };
 		E4C6847117602AA300DD8763 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847017602AA300DD8763 /* UIKit.framework */; };
 		E4C6847317602AA300DD8763 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847217602AA300DD8763 /* Foundation.framework */; };
 		E4C6847517602AA300DD8763 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847417602AA300DD8763 /* CoreGraphics.framework */; };
@@ -26,18 +39,7 @@
 		E4C6849617602AA300DD8763 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847217602AA300DD8763 /* Foundation.framework */; };
 		E4C6849717602AA300DD8763 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847617602AA300DD8763 /* CoreData.framework */; };
 		E4C6849F17602AA300DD8763 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C6849D17602AA300DD8763 /* InfoPlist.strings */; };
-		E4C684A217602AA300DD8763 /* LifePlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C684A117602AA300DD8763 /* LifePlannerTests.m */; };
-		E4C684AD17602B1C00DD8763 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6847E17602AA300DD8763 /* main.m */; };
-		E4C684AE17602B1C00DD8763 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C6848217602AA300DD8763 /* TCAppDelegate.m */; };
-		E4C684AF17602B1C00DD8763 /* LifePlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4C6848A17602AA300DD8763 /* LifePlanner.xcdatamodeld */; };
-		E4C684B117602B1C00DD8763 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847017602AA300DD8763 /* UIKit.framework */; };
-		E4C684B217602B1C00DD8763 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847217602AA300DD8763 /* Foundation.framework */; };
-		E4C684B317602B1C00DD8763 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847417602AA300DD8763 /* CoreGraphics.framework */; };
-		E4C684B417602B1C00DD8763 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6847617602AA300DD8763 /* CoreData.framework */; };
-		E4C684B617602B1C00DD8763 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4C6847B17602AA300DD8763 /* InfoPlist.strings */; };
-		E4C684B717602B1C00DD8763 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C6848417602AA300DD8763 /* Default.png */; };
-		E4C684B817602B1C00DD8763 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C6848617602AA300DD8763 /* Default@2x.png */; };
-		E4C684B917602B1C00DD8763 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4C6848817602AA300DD8763 /* Default-568h@2x.png */; };
+		E4CA9F561767A37600ED6308 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CA9F551767A37600ED6308 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,32 @@
 		3E481DE331F4457C80D9F126 /* Pods-LifePlannerTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifePlannerTests.xcconfig"; path = "Pods/Pods-LifePlannerTests.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3F95091C7C18432287DEF0C4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		53623815443046E98992E145 /* Pods-LifePlannerUnitTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifePlannerUnitTests.xcconfig"; path = "Pods/Pods-LifePlannerUnitTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		E426050F1762682500D2F557 /* TCCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCCoreDataStore.h; path = Application/Controllers/TCCoreDataStore.h; sourceTree = "<group>"; };
+		E42605101762682500D2F557 /* TCCoreDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCCoreDataStore.m; path = Application/Controllers/TCCoreDataStore.m; sourceTree = "<group>"; };
+		E42605701764E62100D2F557 /* NSFileManager+AppLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+AppLibrary.h"; path = "Application/Categories/NSFileManager+AppLibrary.h"; sourceTree = "<group>"; };
+		E42605711764E62100D2F557 /* NSFileManager+AppLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+AppLibrary.m"; path = "Application/Categories/NSFileManager+AppLibrary.m"; sourceTree = "<group>"; };
+		E42605741764E77400D2F557 /* TCNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCNode.h; path = Application/Models/TCNode.h; sourceTree = "<group>"; };
+		E42605751764E77400D2F557 /* TCNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCNode.m; path = Application/Models/TCNode.m; sourceTree = "<group>"; };
+		E42605771764E79300D2F557 /* TCHabit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCHabit.h; path = Application/Models/TCHabit.h; sourceTree = "<group>"; };
+		E42605781764E79300D2F557 /* TCHabit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCHabit.m; path = Application/Models/TCHabit.m; sourceTree = "<group>"; };
+		E426057A1764E7C800D2F557 /* TCHabitTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCHabitTask.h; path = Application/Models/TCHabitTask.h; sourceTree = "<group>"; };
+		E426057B1764E7C800D2F557 /* TCHabitTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCHabitTask.m; path = Application/Models/TCHabitTask.m; sourceTree = "<group>"; };
+		E426057D1764E7F600D2F557 /* TCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCTask.h; path = Application/Models/TCTask.h; sourceTree = "<group>"; };
+		E426057E1764E7F600D2F557 /* TCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCTask.m; path = Application/Models/TCTask.m; sourceTree = "<group>"; };
+		E42605801764E80B00D2F557 /* TCTaskValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCTaskValidation.h; path = Application/Models/TCTaskValidation.h; sourceTree = "<group>"; };
+		E42605811764E80B00D2F557 /* TCTaskValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCTaskValidation.m; path = Application/Models/TCTaskValidation.m; sourceTree = "<group>"; };
+		E42605861764EC5700D2F557 /* NSManagedObject+ObjectCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+ObjectCreation.h"; path = "Application/Categories/NSManagedObject+ObjectCreation.h"; sourceTree = "<group>"; };
+		E42605871764EC5700D2F557 /* NSManagedObject+ObjectCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+ObjectCreation.m"; path = "Application/Categories/NSManagedObject+ObjectCreation.m"; sourceTree = "<group>"; };
+		E426058A1765007900D2F557 /* TCGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCGraphView.h; path = Application/Views/TCGraphView.h; sourceTree = "<group>"; };
+		E426058B1765007900D2F557 /* TCGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCGraphView.m; path = Application/Views/TCGraphView.m; sourceTree = "<group>"; };
+		E426058D1765050900D2F557 /* TCGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCGraph.h; path = Application/Models/TCGraph.h; sourceTree = "<group>"; };
+		E426058E1765050A00D2F557 /* TCGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCGraph.m; path = Application/Models/TCGraph.m; sourceTree = "<group>"; };
+		E4280607176F784900B498E5 /* TCSpecificDaysScheduleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCSpecificDaysScheduleSpec.m; sourceTree = "<group>"; };
+		E428060D176F7B0100B498E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E46AAD0D176E59B40031EDD6 /* TCSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCSchedule.h; path = Application/Models/TCSchedule.h; sourceTree = "<group>"; };
+		E46AAD0E176E59B40031EDD6 /* TCSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCSchedule.m; path = Application/Models/TCSchedule.m; sourceTree = "<group>"; };
+		E46AAD10176E5C210031EDD6 /* TCSpecificDaysSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCSpecificDaysSchedule.h; path = Application/Models/TCSpecificDaysSchedule.h; sourceTree = "<group>"; };
+		E46AAD11176E5C210031EDD6 /* TCSpecificDaysSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCSpecificDaysSchedule.m; path = Application/Models/TCSpecificDaysSchedule.m; sourceTree = "<group>"; };
 		E4C6846D17602AA300DD8763 /* LifePlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifePlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C6847017602AA300DD8763 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4C6847217602AA300DD8763 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,10 +104,9 @@
 		E4C6849317602AA300DD8763 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E4C6849C17602AA300DD8763 /* LifePlannerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LifePlannerTests-Info.plist"; sourceTree = "<group>"; };
 		E4C6849E17602AA300DD8763 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E4C684A017602AA300DD8763 /* LifePlannerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifePlannerTests.h; sourceTree = "<group>"; };
-		E4C684A117602AA300DD8763 /* LifePlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifePlannerTests.m; sourceTree = "<group>"; };
-		E4C684BD17602B1C00DD8763 /* LifePlanner copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LifePlanner copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C684BE17602B1C00DD8763 /* LifePlanner copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LifePlanner copy-Info.plist"; path = "/Users/theo/dev/LifePlanner/LifePlanner copy-Info.plist"; sourceTree = "<absolute>"; };
+		E4CA9F551767A37600ED6308 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = LifePlanner/Media.xcassets; sourceTree = "<group>"; };
+		E4CA9F571767A39500ED6308 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E428060E176F7B0100B498E5 /* XCTest.framework in Frameworks */,
 				E4C6849417602AA300DD8763 /* SenTestingKit.framework in Frameworks */,
 				E4C6849517602AA300DD8763 /* UIKit.framework in Frameworks */,
 				E4C6849617602AA300DD8763 /* Foundation.framework in Frameworks */,
@@ -107,24 +135,76 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4C684B017602B1C00DD8763 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4C684B117602B1C00DD8763 /* UIKit.framework in Frameworks */,
-				E4C684B217602B1C00DD8763 /* Foundation.framework in Frameworks */,
-				E4C684B317602B1C00DD8763 /* CoreGraphics.framework in Frameworks */,
-				E4C684B417602B1C00DD8763 /* CoreData.framework in Frameworks */,
-				13F2290A1A554A2084D1FA1C /* libPods-LifePlannerUnitTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E42605121762682A00D2F557 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E42605891765002700D2F557 /* Views */,
+				E42605731764E73D00D2F557 /* Models */,
+				E426056F1764E5E600D2F557 /* Categories */,
+				E42605131762683500D2F557 /* Controllers */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		E42605131762683500D2F557 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E426050F1762682500D2F557 /* TCCoreDataStore.h */,
+				E42605101762682500D2F557 /* TCCoreDataStore.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E426056F1764E5E600D2F557 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E42605701764E62100D2F557 /* NSFileManager+AppLibrary.h */,
+				E42605711764E62100D2F557 /* NSFileManager+AppLibrary.m */,
+				E42605861764EC5700D2F557 /* NSManagedObject+ObjectCreation.h */,
+				E42605871764EC5700D2F557 /* NSManagedObject+ObjectCreation.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		E42605731764E73D00D2F557 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E426058D1765050900D2F557 /* TCGraph.h */,
+				E426058E1765050A00D2F557 /* TCGraph.m */,
+				E42605801764E80B00D2F557 /* TCTaskValidation.h */,
+				E42605811764E80B00D2F557 /* TCTaskValidation.m */,
+				E426057D1764E7F600D2F557 /* TCTask.h */,
+				E426057E1764E7F600D2F557 /* TCTask.m */,
+				E426057A1764E7C800D2F557 /* TCHabitTask.h */,
+				E426057B1764E7C800D2F557 /* TCHabitTask.m */,
+				E42605771764E79300D2F557 /* TCHabit.h */,
+				E42605781764E79300D2F557 /* TCHabit.m */,
+				E42605741764E77400D2F557 /* TCNode.h */,
+				E42605751764E77400D2F557 /* TCNode.m */,
+				E46AAD0D176E59B40031EDD6 /* TCSchedule.h */,
+				E46AAD0E176E59B40031EDD6 /* TCSchedule.m */,
+				E46AAD10176E5C210031EDD6 /* TCSpecificDaysSchedule.h */,
+				E46AAD11176E5C210031EDD6 /* TCSpecificDaysSchedule.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E42605891765002700D2F557 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E426058A1765007900D2F557 /* TCGraphView.h */,
+				E426058B1765007900D2F557 /* TCGraphView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E4C6846417602AA300DD8763 = {
 			isa = PBXGroup;
 			children = (
+				E4CA9F551767A37600ED6308 /* Media.xcassets */,
 				E4C6847817602AA300DD8763 /* LifePlanner */,
 				E4C6849A17602AA300DD8763 /* LifePlannerTests */,
 				E4C6846F17602AA300DD8763 /* Frameworks */,
@@ -141,7 +221,6 @@
 			children = (
 				E4C6846D17602AA300DD8763 /* LifePlanner.app */,
 				E4C6849217602AA300DD8763 /* LifePlannerTests.octest */,
-				E4C684BD17602B1C00DD8763 /* LifePlanner copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +228,8 @@
 		E4C6846F17602AA300DD8763 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E428060D176F7B0100B498E5 /* XCTest.framework */,
+				E4CA9F571767A39500ED6308 /* SpriteKit.framework */,
 				E4C6847017602AA300DD8763 /* UIKit.framework */,
 				E4C6847217602AA300DD8763 /* Foundation.framework */,
 				E4C6847417602AA300DD8763 /* CoreGraphics.framework */,
@@ -168,6 +249,7 @@
 				E4C6848217602AA300DD8763 /* TCAppDelegate.m */,
 				E4C6848A17602AA300DD8763 /* LifePlanner.xcdatamodeld */,
 				E4C6847917602AA300DD8763 /* Supporting Files */,
+				E42605121762682A00D2F557 /* Application */,
 			);
 			path = LifePlanner;
 			sourceTree = "<group>";
@@ -189,9 +271,8 @@
 		E4C6849A17602AA300DD8763 /* LifePlannerTests */ = {
 			isa = PBXGroup;
 			children = (
-				E4C684A017602AA300DD8763 /* LifePlannerTests.h */,
-				E4C684A117602AA300DD8763 /* LifePlannerTests.m */,
 				E4C6849B17602AA300DD8763 /* Supporting Files */,
+				E4280607176F784900B498E5 /* TCSpecificDaysScheduleSpec.m */,
 			);
 			path = LifePlannerTests;
 			sourceTree = "<group>";
@@ -248,25 +329,6 @@
 			productReference = E4C6849217602AA300DD8763 /* LifePlannerTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		E4C684AB17602B1C00DD8763 /* LifePlannerUnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E4C684BA17602B1C00DD8763 /* Build configuration list for PBXNativeTarget "LifePlannerUnitTests" */;
-			buildPhases = (
-				80F9C35BE87E4D8BBF1F3A9E /* Check Pods Manifest.lock */,
-				E4C684AC17602B1C00DD8763 /* Sources */,
-				E4C684B017602B1C00DD8763 /* Frameworks */,
-				E4C684B517602B1C00DD8763 /* Resources */,
-				40523F19E0474F7AAEB4D14D /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LifePlannerUnitTests;
-			productName = LifePlanner;
-			productReference = E4C684BD17602B1C00DD8763 /* LifePlanner copy.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -291,7 +353,6 @@
 			targets = (
 				E4C6846C17602AA300DD8763 /* LifePlanner */,
 				E4C6849117602AA300DD8763 /* LifePlannerTests */,
-				E4C684AB17602B1C00DD8763 /* LifePlannerUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -301,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CA9F561767A37600ED6308 /* Media.xcassets in Resources */,
 				E4C6847D17602AA300DD8763 /* InfoPlist.strings in Resources */,
 				E4C6848517602AA300DD8763 /* Default.png in Resources */,
 				E4C6848717602AA300DD8763 /* Default@2x.png in Resources */,
@@ -316,48 +378,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E4C684B517602B1C00DD8763 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4C684B617602B1C00DD8763 /* InfoPlist.strings in Resources */,
-				E4C684B717602B1C00DD8763 /* Default.png in Resources */,
-				E4C684B817602B1C00DD8763 /* Default@2x.png in Resources */,
-				E4C684B917602B1C00DD8763 /* Default-568h@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		40523F19E0474F7AAEB4D14D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-LifePlannerUnitTests-resources.sh\"\n";
-		};
-		80F9C35BE87E4D8BBF1F3A9E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-		};
 		A368A828AF674034A73B3AF9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,8 +458,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4C6847F17602AA300DD8763 /* main.m in Sources */,
+				E46AAD12176E5C210031EDD6 /* TCSpecificDaysSchedule.m in Sources */,
 				E4C6848317602AA300DD8763 /* TCAppDelegate.m in Sources */,
 				E4C6848C17602AA300DD8763 /* LifePlanner.xcdatamodeld in Sources */,
+				E42605111762682500D2F557 /* TCCoreDataStore.m in Sources */,
+				E42605721764E62100D2F557 /* NSFileManager+AppLibrary.m in Sources */,
+				E42605761764E77400D2F557 /* TCNode.m in Sources */,
+				E42605791764E79300D2F557 /* TCHabit.m in Sources */,
+				E426057C1764E7C900D2F557 /* TCHabitTask.m in Sources */,
+				E426057F1764E7F600D2F557 /* TCTask.m in Sources */,
+				E42605821764E80C00D2F557 /* TCTaskValidation.m in Sources */,
+				E42605881764EC5700D2F557 /* NSManagedObject+ObjectCreation.m in Sources */,
+				E46AAD0F176E59B40031EDD6 /* TCSchedule.m in Sources */,
+				E426058C1765007900D2F557 /* TCGraphView.m in Sources */,
+				E426058F1765050B00D2F557 /* TCGraph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,17 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4C684A217602AA300DD8763 /* LifePlannerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E4C684AC17602B1C00DD8763 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E4C684AD17602B1C00DD8763 /* main.m in Sources */,
-				E4C684AE17602B1C00DD8763 /* TCAppDelegate.m in Sources */,
-				E4C684AF17602B1C00DD8763 /* LifePlanner.xcdatamodeld in Sources */,
+				E4280609176F784900B498E5 /* TCSpecificDaysScheduleSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,10 +573,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F95091C7C18432287DEF0C4 /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LifePlanner/LifePlanner-Prefix.pch";
 				INFOPLIST_FILE = "LifePlanner/LifePlanner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -562,10 +593,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F95091C7C18432287DEF0C4 /* Pods.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LifePlanner/LifePlanner-Prefix.pch";
 				INFOPLIST_FILE = "LifePlanner/LifePlanner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -608,30 +645,6 @@
 			};
 			name = Release;
 		};
-		E4C684BB17602B1C00DD8763 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53623815443046E98992E145 /* Pods-LifePlannerUnitTests.xcconfig */;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LifePlanner/LifePlanner-Prefix.pch";
-				INFOPLIST_FILE = "LifePlanner copy-Info.plist";
-				PRODUCT_NAME = "LifePlanner copy";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		E4C684BC17602B1C00DD8763 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53623815443046E98992E145 /* Pods-LifePlannerUnitTests.xcconfig */;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LifePlanner/LifePlanner-Prefix.pch";
-				INFOPLIST_FILE = "LifePlanner copy-Info.plist";
-				PRODUCT_NAME = "LifePlanner copy";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -658,15 +671,6 @@
 			buildConfigurations = (
 				E4C684A917602AA300DD8763 /* Debug */,
 				E4C684AA17602AA300DD8763 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4C684BA17602B1C00DD8763 /* Build configuration list for PBXNativeTarget "LifePlannerUnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4C684BB17602B1C00DD8763 /* Debug */,
-				E4C684BC17602B1C00DD8763 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

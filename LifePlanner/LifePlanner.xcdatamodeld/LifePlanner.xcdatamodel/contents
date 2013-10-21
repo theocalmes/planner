@@ -6,10 +6,10 @@
         <attribute name="lastCompleted" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="streakCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="TCHabitTask" representedClassName="TCTaskHabit" parentEntity="TCHabit" syncable="YES">
+    <entity name="TCHabitTask" representedClassName="TCHabitTask" parentEntity="TCHabit" syncable="YES">
         <relationship name="task" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TCTask" syncable="YES"/>
     </entity>
-    <entity name="TCNode" syncable="YES">
+    <entity name="TCNode" representedClassName="TCNode" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="detailedDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -21,12 +21,12 @@
         <attribute name="completionState" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
-    <entity name="TCTaskValidation" parentEntity="TCTask" syncable="YES"/>
+    <entity name="TCTaskValidation" representedClassName="TCTaskValidation" parentEntity="TCTask" syncable="YES"/>
     <elements>
-        <element name="TCTask" positionX="252" positionY="111" width="128" height="73"/>
         <element name="TCHabit" positionX="-29" positionY="-10" width="128" height="103"/>
-        <element name="TCNode" positionX="189" positionY="270" width="128" height="133"/>
-        <element name="TCHabitTask" positionX="178" positionY="-117" width="128" height="58"/>
-        <element name="TCTaskValidation" positionX="540" positionY="-124" width="128" height="43"/>
+        <element name="TCHabitTask" positionX="178" positionY="-117" width="128" height="60"/>
+        <element name="TCNode" positionX="189" positionY="270" width="128" height="135"/>
+        <element name="TCTask" positionX="252" positionY="111" width="128" height="73"/>
+        <element name="TCTaskValidation" positionX="540" positionY="-124" width="128" height="45"/>
     </elements>
 </model>

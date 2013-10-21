@@ -8,68 +8,6 @@
 
 #import "UIView+Frame.h"
 
-CGPoint BKRectCenter(CGRect rect)
-{
-    return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
-}
-
-CGRect centerRect(CGRect rect, CGPoint center)
-{
-    CGRect r = CGRectMake(center.x - rect.size.width/2.0,
-                          center.y - rect.size.height/2.0,
-                          rect.size.width,
-                          rect.size.height);
-    return r;
-}
-
-CGPoint BKAddPoints(CGPoint p1, CGPoint p2)
-{
-    return CGPointMake(p1.x + p2.x, p1.y + p2.y);
-}
-
-CGRect BKAddRects(CGRect r1, CGRect r2)
-{
-    return CGRectMake(r1.origin.x + r2.origin.x,
-                      r1.origin.y + r2.origin.y,
-                      r1.size.width + r2.size.width,
-                      r1.size.height + r2.size.height);
-}
-
-CGRect BKAddPointToRect(CGRect rect, CGPoint point)
-{
-    return CGRectMake(rect.origin.x + point.x, rect.origin.y + point.y, rect.size.width, rect.size.height);
-}
-
-CGRect BKAddSizeToRect(CGRect rect, CGSize size)
-{
-    return CGRectMake(rect.origin.x, rect.origin.y, rect.size.width + size.width, rect.size.height + rect.size.height);
-}
-
-CGRect BKRectFromPoints(CGPoint top, CGPoint bottom)
-{
-    return CGRectMake(top.x, top.y, bottom.x - top.x, bottom.y - top.y);
-}
-
-CGPoint BKTopLeftCorner(CGRect rect)
-{
-    return rect.origin;
-}
-
-CGPoint BKTopRightCorner(CGRect rect)
-{
-    return CGPointMake(CGRectGetMaxX(rect), CGRectGetMinY(rect));
-}
-
-CGPoint BKBottomLeftCorner(CGRect rect)
-{
-    return CGPointMake(CGRectGetMinX(rect), CGRectGetMaxY(rect));
-}
-
-CGPoint BKBottomRightCorner(CGRect rect)
-{
-    return CGPointMake(CGRectGetMaxX(rect), CGRectGetMaxY(rect));
-}
-
 @implementation UIView (Frame)
 
 #pragma mark - Origin Manipulation

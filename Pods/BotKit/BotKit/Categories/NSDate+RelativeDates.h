@@ -10,6 +10,8 @@
 
 @interface NSDate (RelativeDates)
 
++ (NSDate *)dateThatIsNumberOfDaysFromToday:(NSInteger)numberOfDays;
+
 // Represents 00:00:00 on the following date
 + (NSDate *)tomorrow;
 
@@ -23,5 +25,7 @@
 - (BOOL)isToday;
 - (BOOL)isBeforeDate:(NSDate *)date;
 - (BOOL)isAfterDate:(NSDate *)date;
+
+- (NSDateComponents *)dateComponents;
 
 @end
